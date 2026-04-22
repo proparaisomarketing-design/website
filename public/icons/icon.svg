@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo azul -->
+  <rect width="512" height="512" fill="#0037FE" rx="100"/>
+  
+  <!-- Texto ou logo da associação -->
+  <text x="256" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">
+    PP
+  </text>
+  
+  <!-- Linha decorativa verde -->
+  <line x1="100" y1="350" x2="412" y2="350" stroke="#00FF00" stroke-width="8" stroke-linecap="round"/>
+</svg>
