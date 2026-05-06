@@ -30,7 +30,7 @@ export default function InscricaoSucesso() {
           <div className="flex flex-wrap gap-3 justify-center">
             <Link
               href="/"
-              className="inline-flex items-center justify-center bg-ngo-text text-white font-medium px-6 py-3 rounded-full hover:bg-ngo-black transition"
+              className="inline-flex items-center justify-center bg-ngo-orange text-white font-semibold px-6 py-3 rounded-full hover:bg-secondary-dark transition"
             >
               Voltar ao início
             </Link>

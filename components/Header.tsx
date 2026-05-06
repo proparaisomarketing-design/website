@@ -48,7 +48,7 @@ export default function Header() {
               href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Associação%20Pró-Paraíso"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-ngo-text text-white font-medium text-sm px-6 py-2.5 rounded hover:bg-ngo-black transition"
+              className="bg-ngo-orange text-white font-semibold text-sm px-6 py-2.5 rounded hover:bg-secondary-dark transition"
             >
               Fale Conosco
             </a>

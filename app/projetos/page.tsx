@@ -78,15 +78,15 @@ export default function Projetos() {
   return (
     <div className="bg-ngo-cream">
       {/* Hero */}
-      <section className="relative bg-ngo-black text-white overflow-hidden">
+      <section className="relative bg-ngo-orange text-white overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=1600&q=80)',
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ngo-black/70 via-ngo-black/60 to-ngo-black" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/65 via-ngo-orange/40 to-secondary-dark/80" aria-hidden />
         <div className="container-custom relative z-10 pt-24 pb-20 md:pt-32 md:pb-24">
           <span className="section-label text-white/80 border-ngo-yellow mb-5 block">Projetos e ações</span>
           <h1 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-6 max-w-4xl">
@@ -159,7 +159,7 @@ export default function Projetos() {
                     </ul>
                   </div>
 
-                  <div className="bg-ngo-black text-white rounded-2xl p-6 md:p-7">
+                  <div className="bg-secondary-dark text-white rounded-2xl p-6 md:p-7">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="inline-block w-2 h-2 rounded-full bg-ngo-yellow" aria-hidden />
                       <h3 className="text-xs font-semibold uppercase tracking-widest text-ngo-yellow">Resultados percebidos</h3>
@@ -211,7 +211,7 @@ export default function Projetos() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(11,7,6,0.6), rgba(11,7,6,0.55)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
           }}
           aria-hidden
         />

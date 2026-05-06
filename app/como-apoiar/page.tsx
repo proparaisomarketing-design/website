@@ -1,129 +1,289 @@
+import Link from 'next/link'
+
+const formasApoio = [
+  {
+    titulo: 'Doe materiais',
+    icone: '📦',
+    iconBg: 'bg-ngo-green',
+    accent: 'border-l-ngo-green',
+    descricao:
+      'Bola, chuteira, meião, calção, colete, cesta básica, brinquedo de Natal. O que a gente precisa muda toda semana — e a gente conta o que falta na hora.',
+    exemplo: 'Hoje, 100 chuteiras seriam 100 crianças treinando com dignidade.',
+    cta: 'Quero doar materiais',
+    waMsg: 'Olá, gostaria de doar materiais para a Associação Pró-Paraíso. O que vocês estão precisando agora?',
+  },
+  {
+    titulo: 'Seja padrinho',
+    icone: '🤝',
+    iconBg: 'bg-ngo-yellow',
+    accent: 'border-l-ngo-yellow',
+    descricao:
+      'Comerciantes da comunidade já são quem segura projetos como as Caixinhas de Natal. Você ou sua empresa pode adotar uma criança, uma campanha ou uma necessidade do mês — com transparência total.',
+    exemplo: '50 padrinhos viraram quase 400 crianças com presente no último Natal.',
+    cta: 'Quero ser padrinho',
+    waMsg: 'Olá, gostaria de ser padrinho/parceiro da Associação Pró-Paraíso. Como funciona?',
+  },
+  {
+    titulo: 'Doe seu tempo',
+    icone: '🤲',
+    iconBg: 'bg-ngo-orange',
+    accent: 'border-l-ngo-orange',
+    descricao:
+      'Voluntariado é estar presente. Ajudar num treino, num evento, no reforço escolar, na cozinha. Qualquer hora que você tiver, a gente tem onde encaixar com respeito.',
+    exemplo: 'Uma manhã por semana já vira história na vida de uma criança.',
+    cta: 'Quero ser voluntário',
+    waMsg: 'Olá, gostaria de ser voluntário na Associação Pró-Paraíso. Quais são as oportunidades?',
+  },
+  {
+    titulo: 'Conhecer e divulgar',
+    icone: '📢',
+    iconBg: 'bg-primary',
+    accent: 'border-l-primary',
+    descricao:
+      'Vem visitar. Conhece os projetos de perto, conversa com quem é atendido. Depois conta pra alguém — empresa, amigo, vizinho. Indicação ainda é o que mais traz padrinho novo.',
+    exemplo: 'A maior parte dos nossos parceiros chegou por indicação de quem visitou.',
+    cta: 'Agendar visita',
+    waMsg: 'Olá, gostaria de agendar uma visita à Associação Pró-Paraíso para conhecer os projetos.',
+  },
+]
+
+const passos = [
+  {
+    n: '01',
+    titulo: 'Manda um oi',
+    desc: 'WhatsApp, sem formalidade. A gente conversa sobre o que você quer fazer e o que a Associação precisa agora.',
+  },
+  {
+    n: '02',
+    titulo: 'Conhece de perto',
+    desc: 'Marca uma visita ou pede pra te mandar fotos, vídeos e relatórios das ações em andamento.',
+  },
+  {
+    n: '03',
+    titulo: 'Apoia do jeito que faz sentido',
+    desc: 'Com material, dinheiro pra um fornecedor específico, tempo, divulgação. Você escolhe — a gente registra tudo.',
+  },
+]
+
 export default function ComoApoiar() {
-  const formasApoio = [
-    {
-      titulo: 'Doação de materiais e recursos',
-      icone: '📦',
-      descricao: 'Material esportivo (bolas, chuteiras, meiões, calções, coletes), itens para campanhas ou outros recursos que a Associação precise. A doação é feita de forma transparente: a gente passa o orçamento e os contatos, e quem quer ajudar entra em contato direto com o fornecedor. Assim tudo fica registrado e prestado contas.',
-    },
-    {
-      titulo: 'Parceria e padrinho',
-      icone: '🤝',
-      descricao: 'Comerciantes e moradores da comunidade já são grandes apoiadores. Se você ou sua empresa querem ser parceiros ou padrinhos de uma ação (como as Caixinhas de Natal), entramos em contato, explicamos a necessidade e combinamos a melhor forma de apoio, sempre com transparência.',
-    },
-    {
-      titulo: 'Voluntariado',
-      icone: '🤲',
-      descricao: 'Doe tempo e presença. A Associação valoriza quem se dispõe a ajudar nas atividades, nos eventos e no dia a dia dos projetos. Entre em contato para conhecer as oportunidades.',
-    },
-    {
-      titulo: 'Conhecer e divulgar',
-      icone: '📢',
-      descricao: 'Conhecer o trabalho de perto e falar sobre a Associação para outras pessoas aumenta o alcance e a confiança. Visitas e indicações são bem-vindas.',
-    },
-  ]
-
   return (
-    <div className="section-padding">
-      <div className="container-custom">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bebas mb-6 text-primary-dark">
-            COMO APOIAR
+    <div className="bg-ngo-cream">
+      {/* Hero */}
+      <section className="relative bg-ngo-orange text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80)',
+          }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/60 via-ngo-orange/40 to-secondary-dark/80" aria-hidden />
+        <div className="container-custom relative z-10 pt-24 pb-20 md:pt-32 md:pb-24">
+          <span className="section-label text-white/80 border-ngo-yellow mb-5 block">Como apoiar</span>
+          <h1 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-6 max-w-4xl">
+            Vem somar com a gente — do jeito que dá
           </h1>
-          <p className="text-xl text-gray-600">
-            Existem várias formas de fazer parte desta transformação. Tudo é feito com transparência: a gente não recebe dinheiro na mão. Quando há necessidade, passamos orçamento e contatos, e quem doa fala direto com o fornecedor. Assim fica tudo limpo, registrado e prestado contas.
+          <p className="text-white/85 text-lg md:text-xl max-w-2xl leading-relaxed">
+            Não tem uma forma certa de apoiar. Tem a sua. A gente conta o que precisa,
+            mostra onde vai, e registra tudo — pra você apoiar com confiança.
           </p>
-        </div>
-
-        {/* Formas de Apoio */}
-        <section className="mb-16">
-          <div className="grid md:grid-cols-2 gap-8">
-            {formasApoio.map((forma, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-primary"
-              >
-                <div className="text-5xl mb-4">{forma.icone}</div>
-                <h2 className="text-2xl font-bebas mb-4 text-primary-dark">
-                  {forma.titulo}
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {forma.descricao}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Transparência */}
-        <section className="mb-16 bg-primary-dark text-white py-12 rounded-lg">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bebas mb-6 text-center">
-              Por que fazemos assim
-            </h2>
-            <p className="text-lg mb-4 leading-relaxed text-center">
-              Todo projeto social tem custo. Captar apoio hoje exige cuidado com a forma. Por isso não há dinheiro passando de mão em mão. Quando precisamos de algo, explicamos a necessidade, enviamos orçamento e contatos, e a pessoa que quer ajudar fala direto com o fornecedor e faz a doação. Tudo limpo, registrado e transparente. É a razão de a Associação estar de pé até hoje.
-            </p>
-          </div>
-        </section>
-
-        {/* Passos */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bebas mb-8 text-center text-primary-dark">
-              Como começar
-            </h2>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg">
-                <span className="text-2xl font-bebas text-primary-dark shrink-0">1</span>
-                <div>
-                  <h3 className="font-semibold mb-2 text-primary-dark">Entre em contato</h3>
-                  <p className="text-gray-700">
-                    Fale conosco pelo WhatsApp. Contamos o que fazemos, o que precisamos e como você pode ajudar.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg">
-                <span className="text-2xl font-bebas text-primary-dark shrink-0">2</span>
-                <div>
-                  <h3 className="font-semibold mb-2 text-primary-dark">Conheça os projetos</h3>
-                  <p className="text-gray-700">
-                    Você pode agendar uma visita ou conhecer pelo site. Assim fica claro onde sua ajuda se encaixa.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg">
-                <span className="text-2xl font-bebas text-primary-dark shrink-0">3</span>
-                <div>
-                  <h3 className="font-semibold mb-2 text-primary-dark">Escolha sua forma de apoio</h3>
-                  <p className="text-gray-700">
-                    Doação de materiais, parceria, voluntariado ou divulgação. Toda forma de apoio faz diferença.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Final */}
-        <section className="text-center">
-          <div className="max-w-2xl mx-auto bg-primary-dark text-white p-8 rounded-lg">
-            <h2 className="text-3xl font-bebas mb-4">
-              PRONTO PARA FAZER A DIFERENÇA?
-            </h2>
-            <p className="text-lg mb-6">
-              Entre em contato e descubra como você pode apoiar com transparência.
-            </p>
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20como%20posso%20apoiar%20a%20Associação%20Pró-Paraíso"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-7 py-3.5 rounded hover:bg-ngo-yellow/90 transition"
             >
               Falar no WhatsApp
             </a>
+            <a
+              href="#formas"
+              className="inline-flex items-center justify-center bg-white/10 text-white font-medium px-7 py-3.5 rounded border border-white/30 hover:bg-white/20 transition"
+            >
+              Ver as formas de apoio
+            </a>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Manifesto curto */}
+      <section className="section-padding bg-ngo-yellow-light">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="font-bebas text-3xl md:text-4xl lg:text-5xl tracking-wide leading-tight text-ngo-text">
+              &ldquo;A gente não recebe dinheiro na mão. A gente recebe presença, recebe rede, recebe gente que aparece.
+              Se você quer apoiar, vem.&rdquo;
+            </p>
+            <p className="text-ngo-text-muted mt-6 text-sm uppercase tracking-widest font-semibold">
+              Valquito Soares — Presidente
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Formas de apoio */}
+      <section id="formas" className="section-padding bg-white scroll-mt-20">
+        <div className="container-custom">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <span className="section-label mb-4 block">Formas de apoiar</span>
+            <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text mb-5">
+              Tem 4 jeitos. Pode escolher um, todos, ou inventar o seu
+            </h2>
+            <p className="text-ngo-text-muted text-lg leading-relaxed">
+              Cada forma cabe num tamanho de gente. Tem quem doa um par de chuteiras, tem quem ajuda
+              uma campanha inteira, tem quem aparece todo sábado pro treino. Tudo conta.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+            {formasApoio.map((f) => (
+              <article
+                key={f.titulo}
+                className={`bg-white rounded-2xl p-7 md:p-8 shadow-card border-l-4 ${f.accent} border-y border-r border-ngo-border/60 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col`}
+              >
+                <div className="flex items-center gap-4 mb-5">
+                  <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl ${f.iconBg} flex items-center justify-center text-3xl md:text-4xl shadow-sm flex-shrink-0`}>
+                    <span aria-hidden>{f.icone}</span>
+                  </div>
+                  <h3 className="font-bebas text-2xl md:text-3xl tracking-wide text-ngo-text leading-none">
+                    {f.titulo}
+                  </h3>
+                </div>
+
+                <p className="text-ngo-text-muted leading-relaxed mb-5 flex-1">{f.descricao}</p>
+
+                <div className="bg-ngo-yellow-light rounded-xl px-4 py-3 mb-5">
+                  <p className="text-sm text-ngo-text leading-relaxed">
+                    <span className="font-semibold">Pra ter ideia: </span>
+                    {f.exemplo}
+                  </p>
+                </div>
+
+                <a
+                  href={`https://api.whatsapp.com/send/?phone=5511987103256&text=${encodeURIComponent(f.waMsg)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-ngo-orange text-white font-semibold text-sm pl-5 pr-2 py-2 rounded-full hover:bg-secondary-dark transition-colors w-fit"
+                >
+                  {f.cta}
+                  <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                    <svg className="w-4 h-4 text-ngo-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Como funciona — 3 passos */}
+      <section id="doar" className="section-padding bg-ngo-cream scroll-mt-20">
+        <div className="container-custom">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <span className="section-label mb-4 block">Como começar</span>
+            <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text">
+              Em 3 passos, sem burocracia
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+            {passos.map((p) => (
+              <div
+                key={p.n}
+                className="bg-white rounded-2xl p-7 md:p-8 border border-ngo-border/60 shadow-card relative overflow-hidden"
+              >
+                <span className="absolute -top-4 -right-2 font-bebas text-7xl md:text-8xl text-ngo-yellow-light leading-none select-none" aria-hidden>
+                  {p.n}
+                </span>
+                <div className="relative">
+                  <p className="text-ngo-yellow font-bebas text-2xl mb-3">{p.n}</p>
+                  <h3 className="font-bebas text-2xl md:text-3xl tracking-wide text-ngo-text mb-3 leading-none">
+                    {p.titulo}
+                  </h3>
+                  <p className="text-ngo-text-muted leading-relaxed">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Por que fazemos assim — bloco quente com fala */}
+      <section className="section-padding bg-secondary-dark text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <span className="section-label text-white/80 border-ngo-yellow mb-6 inline-block">Por que fazemos assim</span>
+            <h2 className="font-bebas text-3xl md:text-5xl lg:text-6xl tracking-wide leading-[1.1] mb-10">
+              &ldquo;Eu trabalho com tudo sério, com tudo em papel, com tudo registrado em foto e em imagem.
+              É por isso que a gente está de pé até hoje.&rdquo;
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 text-white/85 leading-relaxed mb-8">
+              <p>
+                Todo projeto social tem custo. Captar apoio hoje exige cuidado com a forma —
+                não tem mais espaço pra dinheiro passando de mão em mão.
+              </p>
+              <p>
+                Quando precisamos de algo, explicamos a necessidade, enviamos orçamento e contatos,
+                e quem quer ajudar fala direto com o fornecedor e faz a doação. Tudo limpo, registrado, transparente.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 items-center">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-sm text-white/90">
+                ✓ Tudo documentado
+              </span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-sm text-white/90">
+                ✓ Doador fala direto com fornecedor
+              </span>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-sm text-white/90">
+                ✓ Prestação de contas
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-auto lg:max-w-7xl my-16 md:my-24 rounded-2xl">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+          }}
+          aria-hidden
+        />
+        <div className="container-custom relative z-10 py-16 md:py-20 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5 font-sans max-w-3xl mx-auto">
+            Não precisa decidir tudo agora
+          </h2>
+          <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto">
+            Só manda um oi. A gente conta o que tá rolando e você decide depois.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20como%20posso%20apoiar%20a%20Associação%20Pró-Paraíso"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
+            >
+              Falar no WhatsApp
+            </a>
+            <Link
+              href="/projetos"
+              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-cream transition"
+            >
+              Conhecer projetos
+            </Link>
+            <Link
+              href="/impacto"
+              className="inline-flex items-center justify-center bg-transparent text-white font-medium px-8 py-4 rounded border border-white/40 hover:bg-white/10 transition"
+            >
+              Ver impacto real
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

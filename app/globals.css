@@ -36,8 +36,8 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold
-           shadow-card hover:shadow-card-hover hover:bg-ngo-black hover:-translate-y-0.5
+    @apply inline-flex items-center justify-center bg-ngo-orange text-white px-6 py-3 rounded-lg font-semibold
+           shadow-card hover:shadow-card-hover hover:bg-secondary-dark hover:-translate-y-0.5
            active:translate-y-0 active:shadow-card
            transition-all duration-300 ease-out;
   }
@@ -88,9 +88,9 @@
   }
 
   .card-dark {
-    @apply bg-ngo-black text-white rounded-2xl shadow-card border border-white/10
+    @apply bg-ngo-orange text-white rounded-2xl shadow-card border border-white/15
            transition-all duration-300 ease-out
-           hover:shadow-card-hover hover:-translate-y-1 hover:border-ngo-yellow/40;
+           hover:shadow-card-hover hover:-translate-y-1 hover:border-ngo-yellow;
   }
 
   /* Card com destaque lateral (border-l-4) padronizado */
@@ -128,13 +128,13 @@
     @apply origin-left scale-x-100;
   }
 
-  /* Gradientes úteis para heros */
+  /* Gradientes úteis para heros — paleta da logo (laranja → amarelo) */
   .bg-gradient-hero {
-    background: linear-gradient(135deg, #0B0706 0%, #1a1530 50%, #0037FE 100%);
+    background: linear-gradient(135deg, #C46400 0%, #EF7D00 50%, #F4A900 100%);
   }
 
   .bg-gradient-overlay {
-    background: linear-gradient(180deg, rgba(11,7,6,0.2) 0%, rgba(11,7,6,0.75) 100%);
+    background: linear-gradient(180deg, rgba(196,100,0,0.3) 0%, rgba(196,100,0,0.75) 100%);
   }
 
   .text-gradient-primary {

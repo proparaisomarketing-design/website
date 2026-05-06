@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-ngo-black text-white">
+    <footer className="bg-ngo-orange text-white">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Logo e sobre */}
@@ -94,7 +94,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="px-5 py-3 rounded bg-white text-ngo-text font-medium text-sm hover:bg-ngo-cream transition whitespace-nowrap"
+                className="px-5 py-3 rounded bg-white text-secondary-dark font-semibold text-sm hover:bg-ngo-cream transition whitespace-nowrap"
               >
                 Cadastrar
               </button>

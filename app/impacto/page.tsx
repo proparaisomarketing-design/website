@@ -92,15 +92,15 @@ export default function Impacto() {
   return (
     <div className="bg-ngo-cream">
       {/* Hero */}
-      <section className="relative bg-ngo-black text-white overflow-hidden">
+      <section className="relative bg-ngo-orange text-white overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-35"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80)',
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ngo-black/70 via-ngo-black/60 to-ngo-black" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/60 via-ngo-orange/40 to-secondary-dark/80" aria-hidden />
         <div className="container-custom relative z-10 pt-24 pb-20 md:pt-32 md:pb-24">
           <span className="section-label text-white/80 border-ngo-yellow mb-5 block">Nosso impacto</span>
           <h1 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-6 max-w-4xl">
@@ -204,7 +204,7 @@ export default function Impacto() {
       </section>
 
       {/* Transparência */}
-      <section className="section-padding bg-ngo-black text-white">
+      <section className="section-padding bg-secondary-dark text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <span className="section-label text-white/80 border-ngo-yellow mb-6 inline-block">Transparência e confiança</span>
@@ -214,7 +214,7 @@ export default function Impacto() {
             <ul className="space-y-4">
               {credibilidade.map((item, i) => (
                 <li key={i} className="flex gap-4 items-start bg-white/5 rounded-2xl p-5 border border-white/10">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ngo-yellow text-ngo-text flex items-center justify-center font-bebas text-lg leading-none">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ngo-yellow text-secondary-dark flex items-center justify-center font-bebas text-lg leading-none">
                     {i + 1}
                   </span>
                   <p className="text-white/85 leading-relaxed pt-1">{item}</p>
@@ -230,7 +230,7 @@ export default function Impacto() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(11,7,6,0.6), rgba(11,7,6,0.55)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
           }}
           aria-hidden
         />

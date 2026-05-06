@@ -22,8 +22,8 @@ const timeline = [
   },
   {
     year: '2024+',
-    title: '12+ modalidades, base de 800 alunos',
-    body: 'Futebol de campo, society, futsal, reforço escolar (manhã e tarde), muay thai, capoeira, karatê, judô, pilates, zumba, aula de sertanejo. Caminhando para 1.000 alunos. Expansão para o Jardim Tapicerica da Serra (Jardim Banca Flor), com cerca de 300 alunos no futebol de campo.',
+    title: '14 modalidades, base de 800 alunos',
+    body: 'Futebol de campo, society, futsal, reforço escolar (manhã e tarde), muay thai, capoeira, karatê, judô, pilates, zumba, aula de sertanejo e mais. Caminhando para 1.000 alunos. Expansão para o Jardim Tapicerica da Serra (Jardim Banca Flor), com cerca de 300 alunos no futebol de campo.',
     dotColor: 'bg-primary',
   },
   {
@@ -59,15 +59,15 @@ export default function QuemSomos() {
   return (
     <div className="bg-ngo-cream">
       {/* Hero */}
-      <section className="relative bg-ngo-black text-white overflow-hidden">
+      <section className="relative bg-ngo-orange text-white overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-35"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80)',
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ngo-black/70 via-ngo-black/60 to-ngo-black" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/60 via-ngo-orange/40 to-secondary-dark/80" aria-hidden />
         <div className="container-custom relative z-10 pt-24 pb-20 md:pt-32 md:pb-24">
           <span className="section-label text-white/80 border-ngo-yellow mb-5 block">Quem somos</span>
           <h1 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-6 max-w-4xl">
@@ -135,8 +135,8 @@ export default function QuemSomos() {
               </div>
             </div>
             <aside className="lg:col-span-5 space-y-4">
-              <StatCard bg="bg-ngo-black" text="text-white" labelColor="text-ngo-yellow" number="800+" label="alunos ativos hoje" sub="Caminhando para 1.000" />
-              <StatCard bg="bg-ngo-yellow-light" text="text-ngo-text" labelColor="text-ngo-text-muted" number="12+" label="modalidades" sub="De esporte a reforço escolar" />
+              <StatCard bg="bg-ngo-orange" text="text-white" labelColor="text-ngo-yellow-light" number="800+" label="alunos ativos hoje" sub="Caminhando para 1.000" />
+              <StatCard bg="bg-ngo-yellow-light" text="text-ngo-text" labelColor="text-ngo-text-muted" number="14" label="modalidades" sub="De esporte a reforço escolar" />
               <StatCard bg="bg-ngo-green" text="text-ngo-text" labelColor="text-ngo-text/70" number="10+" label="anos de atuação" sub="Desde 2015 em Paraisópolis" />
               <StatCard bg="bg-white border border-ngo-border" text="text-ngo-text" labelColor="text-ngo-text-muted" number="2" label="unidades" sub="Paraisópolis e Jardim Tapicerica" />
             </aside>
@@ -190,7 +190,7 @@ export default function QuemSomos() {
       </section>
 
       {/* Como somos percebidos — pull quote */}
-      <section className="section-padding bg-ngo-black text-white">
+      <section className="section-padding bg-secondary-dark text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <span className="section-label text-white/80 border-ngo-yellow mb-6 inline-block">Como somos percebidos</span>
@@ -242,7 +242,7 @@ export default function QuemSomos() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(11,7,6,0.6), rgba(11,7,6,0.55)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
           }}
           aria-hidden
         />

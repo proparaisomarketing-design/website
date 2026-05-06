@@ -5,7 +5,7 @@ export default function Home() {
     <div className="bg-ngo-cream min-h-screen">
       {/* Hero Section - vídeo institucional ao fundo */}
       <section className="relative min-h-[90vh] flex flex-col justify-end overflow-hidden">
-        <div className="absolute inset-0 bg-ngo-black">
+        <div className="absolute inset-0 bg-secondary-dark">
           <video
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
@@ -17,9 +17,9 @@ export default function Home() {
           >
             <source src="/videos/pro-paraiso-hero.mp4" type="video/mp4" />
           </video>
-          {/* Lente escura por cima do vídeo — gradiente do topo (claro) ao rodapé (mais escuro) pra dar contraste no texto */}
+          {/* Lente quente por cima do vídeo — gradiente nas cores da logo, do topo ao rodapé, pra dar contraste no texto */}
           <div
-            className="absolute inset-0 bg-gradient-to-b from-ngo-black/60 via-ngo-black/55 to-ngo-black/80"
+            className="absolute inset-0 bg-gradient-to-b from-secondary-dark/65 via-ngo-orange/55 to-secondary-dark/80"
             aria-hidden
           />
         </div>
@@ -29,7 +29,7 @@ export default function Home() {
               Cuidado inclusivo para quem mais precisa
             </h1>
             <p className="text-xl text-white/90 mb-10 max-w-xl">
-              A Associação Pró-Paraíso transforma transparência em confiança e confiança em participação em Paraisópolis, São Paulo.
+              Há 10 anos em Paraisópolis e, mais recentemente, no Jardim Tapicerica da Serra. Transformando transparência em confiança e confiança em participação.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -60,16 +60,16 @@ export default function Home() {
           {/* Estatísticas no rodapé do hero */}
           <div className="mt-16 pt-8 border-t border-white/30 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
-              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">+250</p>
-              <p className="text-white/80 text-sm mt-1">crianças e jovens atendidos</p>
+              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">+800</p>
+              <p className="text-white/80 text-sm mt-1">crianças e jovens em 14 modalidades</p>
             </div>
             <div>
               <p className="text-white font-bebas text-4xl md:text-5xl leading-none">10+</p>
               <p className="text-white/80 text-sm mt-1">anos de atuação em Paraisópolis</p>
             </div>
             <div>
-              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">4</p>
-              <p className="text-white/80 text-sm mt-1">frentes ativas de trabalho</p>
+              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">500</p>
+              <p className="text-white/80 text-sm mt-1">famílias atendidas por mês em campanhas solidárias</p>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
                 Oferecemos um lugar para crianças e jovens crescerem com dignidade
               </h2>
               <p className="text-ngo-text-muted leading-relaxed mb-4">
-                Desde 2015 atuamos em Paraisópolis com esporte, reforço escolar, campanhas e muito mais. Tudo registrado e prestado contas.
+                Desde 2015 atuamos em Paraisópolis e, mais recentemente, no Jardim Tapicerica da Serra (Banca Flor), com esporte, reforço escolar, campanhas solidárias e muito mais. Tudo registrado e prestado contas.
               </p>
               <p className="text-ngo-text-muted leading-relaxed mb-8">
                 O bem que fazemos é o paraíso que construímos juntos. Quando existe presença, existe transformação.
@@ -97,7 +97,7 @@ export default function Home() {
                 Conheça nossa história
               </Link>
             </div>
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-ngo-black/10">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-ngo-orange/10">
               <div
                 className="absolute inset-0 bg-cover bg-center rounded-2xl"
                 style={{
@@ -144,7 +144,7 @@ export default function Home() {
               },
               {
                 title: 'Caixinhas de Natal',
-                desc: 'Cartinha, brinquedo, roupa e sapato. Uma tradição de anos que já presenteou centenas de crianças.',
+                desc: 'Cartinha, brinquedo, roupa e sapato. 5 anos consecutivos presenteando quase 400 crianças por edição.',
                 icon: '🎁',
                 iconBg: 'bg-ngo-orange',
                 accent: 'hover:border-ngo-orange',
@@ -171,10 +171,10 @@ export default function Home() {
                   {item.title}
                 </h3>
                 <p className="text-ngo-text-muted leading-relaxed mb-6">{item.desc}</p>
-                <span className="inline-flex items-center gap-3 bg-ngo-text text-white font-medium text-sm pl-5 pr-2 py-2 rounded-full group-hover:bg-ngo-black transition-colors">
+                <span className="inline-flex items-center gap-3 bg-ngo-orange text-white font-semibold text-sm pl-5 pr-2 py-2 rounded-full group-hover:bg-secondary-dark transition-colors">
                   Saiba mais
                   <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
-                    <svg className="w-4 h-4 text-ngo-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <svg className="w-4 h-4 text-ngo-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
@@ -185,8 +185,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projetos - fundo escuro, 3 cards */}
-      <section className="section-padding bg-ngo-black">
+      {/* Projetos - 3 cards sobre fundo laranja */}
+      <section className="section-padding bg-ngo-orange">
         <div className="container-custom">
           <span className="section-label text-white/80 border-ngo-yellow mb-4 block">Projetos que realizamos</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-16 font-sans max-w-3xl">
@@ -222,11 +222,11 @@ export default function Home() {
                   className="absolute inset-0 bg-cover bg-center transition group-hover:scale-105"
                   style={{ backgroundImage: `url(${card.image})` }}
                 />
-                <div className="absolute inset-0 bg-ngo-black/60" />
+                <div className="absolute inset-0 bg-secondary-dark/65" />
                 <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
                   <h3 className="text-2xl font-bold mb-3 font-sans">{card.title}</h3>
                   <p className="text-white/90 text-sm leading-relaxed mb-6">{card.desc}</p>
-                  <span className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-6 py-3 rounded w-fit">
+                  <span className="inline-flex items-center justify-center bg-white text-secondary-dark font-semibold px-6 py-3 rounded w-fit">
                     Saiba mais
                   </span>
                 </div>
@@ -236,52 +236,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Impacto - como gastamos doações */}
-      <section className="section-padding bg-ngo-black">
+      {/* Impacto em números — indicadores verificáveis */}
+      <section className="section-padding bg-secondary-dark">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-sans">
-                Como usamos suas doações e para onde vão
-              </h2>
-              <p className="text-white/70 leading-relaxed mb-10">
-                Queremos que você saiba exatamente onde o seu apoio está sendo aplicado. Comprometemo-nos com total transparência.
-              </p>
-              <Link
-                href="/impacto"
-                className="inline-flex items-center gap-2 text-ngo-yellow font-medium group"
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <span className="section-label text-white/80 border-ngo-yellow mb-4 block">Impacto em números</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-sans">
+              Transparência traduzida em prática
+            </h2>
+            <p className="text-white/70 leading-relaxed">
+              Os números abaixo são reais e verificáveis — atualizados conforme nossa rotina de atendimentos, campanhas e atividades. Comprometemo-nos com total transparência.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {[
+              { number: '1.000', label: 'atendimentos por mês', sub: '12.000 ao ano', accent: 'border-ngo-yellow' },
+              { number: '500', label: 'famílias atendidas por mês', sub: 'em campanhas solidárias', accent: 'border-ngo-green' },
+              { number: '14', label: 'modalidades ofertadas', sub: 'esporte, cultura e reforço', accent: 'border-ngo-orange' },
+              { number: '+800', label: 'alunos ativos', sub: 'caminhando para 1.000', accent: 'border-primary' },
+              { number: '8', label: 'campanhas solidárias por ano', sub: '~5.000 famílias beneficiadas', accent: 'border-ngo-yellow' },
+              { number: '2', label: 'unidades de atendimento', sub: 'Paraisópolis e Jardim Tapicerica', accent: 'border-ngo-green' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className={`bg-ngo-orange/40 backdrop-blur-sm rounded-2xl p-6 md:p-7 border-2 ${item.accent} border-opacity-50 hover:border-opacity-100 hover:bg-ngo-orange/60 transition-all`}
               >
-                Ver relatório de impacto
-                <span className="group-hover:translate-x-1 transition">→</span>
-              </Link>
-            </div>
-            <div className="space-y-5" role="list" aria-label="Distribuição das doações">
-              {[
-                { label: 'Esporte e atividades', pct: 35, color: 'bg-ngo-green' },
-                { label: 'Educação e reforço escolar', pct: 30, color: 'bg-ngo-yellow' },
-                { label: 'Campanhas e eventos', pct: 25, color: 'bg-ngo-orange' },
-                { label: 'Estrutura e gestão', pct: 10, color: 'bg-primary' },
-              ].map((item) => (
-                <div key={item.label} role="listitem">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <span className="text-white font-medium">{item.label}</span>
-                    <span className="text-white font-bebas text-2xl leading-none">{item.pct}%</span>
-                  </div>
-                  <div
-                    className="h-2.5 w-full bg-white/10 rounded-full overflow-hidden"
-                    aria-hidden="true"
-                  >
-                    <div
-                      className={`h-full ${item.color} rounded-full transition-all duration-700 ease-out`}
-                      style={{ width: `${item.pct}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-              <p className="text-white/50 text-xs mt-4">
-                Valores referentes à distribuição média do orçamento anual.
-              </p>
-            </div>
+                <p className="font-bebas text-5xl md:text-6xl leading-none tracking-wide text-white mb-3">
+                  {item.number}
+                </p>
+                <p className="text-white font-medium mb-1">{item.label}</p>
+                <p className="text-white/60 text-sm">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12">
+            <Link
+              href="/impacto"
+              className="inline-flex items-center gap-2 text-ngo-yellow font-medium group"
+            >
+              Ver relatório de impacto completo
+              <span className="group-hover:translate-x-1 transition">→</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -291,7 +286,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(11,7,6,0.5), rgba(11,7,6,0.5)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.6), rgba(239,125,0,0.55)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
           }}
         />
         <div className="container-custom relative z-10 py-16 md:py-20 text-center">
@@ -341,9 +336,9 @@ export default function Home() {
                 desc: 'Aulas diárias para crianças de 6 a 12 anos.',
               },
               {
-                when: 'Sáb e Dom',
+                when: 'Todos os dias',
                 title: 'Esporte em ação',
-                desc: 'Treinos de futebol, futsal e society.',
+                desc: 'Treinos diários de futebol de campo, futsal e society. Constância e vínculo.',
               },
               {
                 when: 'Dezembro',
