@@ -16,8 +16,9 @@ const steps = [
 ]
 
 export default function BriefingSidebar({ currentSection, totalSections, onNavigate }: BriefingSidebarProps) {
-  const getStepState = (stepNumber: number) => {
+  const getStepState = (stepNumber: number): 'active' | 'completed' | 'future' => {
     if (stepNumber === currentSection) return 'active'
+    if (stepNumber < currentSection) return 'completed'
     return 'future'
   }
 

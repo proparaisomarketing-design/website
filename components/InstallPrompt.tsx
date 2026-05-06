@@ -83,7 +83,7 @@ export default function InstallPrompt() {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50 animate-slide-up">
-      <div className="bg-primary text-white p-4 rounded-lg shadow-2xl">
+      <div className="bg-primary-dark text-white p-4 rounded-lg shadow-2xl">
         <div className="flex items-start justify-between mb-3">
           <h3 className="font-bebas text-xl">Instalar App</h3>
           <button
@@ -114,7 +114,7 @@ export default function InstallPrompt() {
             </p>
             <button
               onClick={handleInstallClick}
-              className="bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-full"
+              className="bg-white text-primary-dark px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-full"
             >
               Instalar Agora
             </button>

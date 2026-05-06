@@ -4,7 +4,7 @@ export default function Contato() {
       <div className="container-custom">
         {/* Hero */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bebas mb-6 text-primary">
+          <h1 className="text-5xl md:text-6xl font-bebas mb-6 text-primary-dark">
             CONTATO
           </h1>
           <p className="text-xl text-gray-600">
@@ -14,7 +14,7 @@ export default function Contato() {
 
         {/* Mensagem de Acolhimento */}
         <section className="mb-16">
-          <div className="max-w-3xl mx-auto bg-primary text-white p-8 rounded-lg text-center">
+          <div className="max-w-3xl mx-auto bg-primary-dark text-white p-8 rounded-lg text-center">
             <h2 className="text-3xl font-bebas mb-4">
               SEJA BEM-VINDO(A)!
             </h2>
@@ -32,7 +32,7 @@ export default function Contato() {
             {/* WhatsApp */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="text-5xl mb-4">💬</div>
-              <h3 className="text-2xl font-bebas mb-4 text-primary">
+              <h3 className="text-2xl font-bebas mb-4 text-primary-dark">
                 WhatsApp
               </h3>
               <p className="text-gray-600 mb-6">
@@ -43,7 +43,7 @@ export default function Contato() {
                   href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Associação%20Pró-Paraíso"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-primary font-semibold hover:underline"
+                  className="block text-primary-dark font-semibold hover:underline"
                 >
                   (11) 98710-3256
                 </a>
@@ -61,7 +61,7 @@ export default function Contato() {
             {/* Telefone */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="text-5xl mb-4">📞</div>
-              <h3 className="text-2xl font-bebas mb-4 text-primary">
+              <h3 className="text-2xl font-bebas mb-4 text-primary-dark">
                 Telefone
               </h3>
               <p className="text-gray-600 mb-6">
@@ -70,13 +70,13 @@ export default function Contato() {
               <div className="space-y-3 mb-6">
                 <a
                   href="tel:+5511987103256"
-                  className="block text-primary font-semibold hover:underline"
+                  className="block text-primary-dark font-semibold hover:underline"
                 >
                   (11) 98710-3256
                 </a>
                 <a
                   href="tel:+551137429106"
-                  className="block text-primary font-semibold hover:underline"
+                  className="block text-primary-dark font-semibold hover:underline"
                 >
                   (11) 3742-9106
                 </a>
@@ -86,7 +86,7 @@ export default function Contato() {
             {/* E-mail */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="text-5xl mb-4">✉️</div>
-              <h3 className="text-2xl font-bebas mb-4 text-primary">
+              <h3 className="text-2xl font-bebas mb-4 text-primary-dark">
                 E-mail
               </h3>
               <p className="text-gray-600 mb-6">
@@ -94,7 +94,7 @@ export default function Contato() {
               </p>
               <a
                 href="mailto:associacao.pro.paraiso.2010@gmail.com"
-                className="text-primary font-semibold hover:underline break-all"
+                className="text-primary-dark font-semibold hover:underline break-all"
               >
                 associacao.pro.paraiso.2010@gmail.com
               </a>
@@ -103,7 +103,7 @@ export default function Contato() {
             {/* Localização */}
             <div className="bg-white p-8 rounded-lg shadow-lg text-center">
               <div className="text-5xl mb-4">📍</div>
-              <h3 className="text-2xl font-bebas mb-4 text-primary">
+              <h3 className="text-2xl font-bebas mb-4 text-primary-dark">
                 Localização
               </h3>
               <p className="text-gray-600 mb-6">
@@ -123,7 +123,7 @@ export default function Contato() {
         {/* Horário de Funcionamento */}
         <section className="mb-16">
           <div className="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bebas mb-4 text-primary">
+            <h3 className="text-2xl font-bebas mb-4 text-primary-dark">
               Horário de Funcionamento
             </h3>
             <p className="text-gray-700">
@@ -135,7 +135,7 @@ export default function Contato() {
         {/* CTA Final */}
         <section className="text-center">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bebas mb-4 text-primary">
+            <h2 className="text-3xl font-bebas mb-4 text-primary-dark">
               ESTAMOS ESPERANDO SEU CONTATO!
             </h2>
             <p className="text-lg text-gray-600 mb-6">

@@ -8,30 +8,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Paleta oficial Pró-Paraíso
         primary: {
-          DEFAULT: '#0037FE',
-          dark: '#0028CC',
-          light: '#4D6FFF',
+          DEFAULT: '#3B95D2', // azul principal
+          dark: '#1F6FA8',    // hover e texto branco (contraste AA)
+          light: '#C8E6FA',   // tints e fundos suaves
         },
         secondary: {
-          DEFAULT: '#00FF00',
-          dark: '#00CC00',
+          DEFAULT: '#EF7D00', // laranja — CTA quente
+          dark: '#C46400',
         },
-        // Paleta inspirada no design NGO (Figma)
         ngo: {
           black: '#0B0706',
           text: '#1D2130',
           'text-muted': '#525560',
-          yellow: '#F2C94C',
-          'yellow-light': '#FCEDC6',
-          green: '#BEF3C0',
+          yellow: '#F4A900',        // mostarda — acento forte
+          'yellow-light': '#FFF17C',// amarelo pastel — fundo de seção
+          orange: '#EF7D00',        // laranja — CTA e destaques
+          green: '#60852D',         // verde musgo — acento
+          'green-dark': '#404A1C',  // verde oliva — detalhes escuros
           cream: '#FEFDFC',
           border: '#E5E5E5',
         },
       },
       fontFamily: {
-        sans: ['Roboto', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
-        bebas: ['Bebas Neue', 'sans-serif'],
+        sans: ['var(--font-roboto)', 'Roboto', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+        bebas: ['var(--font-bebas)', 'Bebas Neue', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['clamp(3rem, 6vw, 5rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],

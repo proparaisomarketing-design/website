@@ -3,14 +3,24 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className="bg-ngo-cream min-h-screen">
-      {/* Hero Section - inspirado no Figma */}
-      <section className="relative min-h-[90vh] flex flex-col justify-end">
+      {/* Hero Section - vídeo institucional ao fundo */}
+      <section className="relative min-h-[90vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0 bg-ngo-black">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          >
+            <source src="/videos/pro-paraiso-hero.mp4" type="video/mp4" />
+          </video>
+          {/* Lente escura por cima do vídeo — gradiente do topo (claro) ao rodapé (mais escuro) pra dar contraste no texto */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(11,7,6,0.6) 0%, rgba(11,7,6,0.5) 100%), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
-            }}
+            className="absolute inset-0 bg-gradient-to-b from-ngo-black/60 via-ngo-black/55 to-ngo-black/80"
+            aria-hidden
           />
         </div>
         <div className="container-custom relative z-10 pb-16 pt-32 md:pt-40">
@@ -22,6 +32,12 @@ export default function Home() {
               A Associação Pró-Paraíso transforma transparência em confiança e confiança em participação em Paraisópolis, São Paulo.
             </p>
             <div className="flex flex-wrap gap-4">
+              <Link
+                href="/como-apoiar#doar"
+                className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded transition hover:bg-ngo-yellow/90"
+              >
+                Quero doar
+              </Link>
               <Link
                 href="/como-apoiar"
                 className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded transition hover:bg-ngo-cream"
@@ -42,9 +58,19 @@ export default function Home() {
             </div>
           </div>
           {/* Estatísticas no rodapé do hero */}
-          <div className="mt-16 pt-8 border-t border-white/30 flex flex-wrap gap-8 md:gap-16">
-            <p className="text-white font-medium text-lg">+ de 250 crianças e jovens atendidos</p>
-            <p className="text-white font-medium text-lg">Anos de atuação em Paraisópolis</p>
+          <div className="mt-16 pt-8 border-t border-white/30 grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">+250</p>
+              <p className="text-white/80 text-sm mt-1">crianças e jovens atendidos</p>
+            </div>
+            <div>
+              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">10+</p>
+              <p className="text-white/80 text-sm mt-1">anos de atuação em Paraisópolis</p>
+            </div>
+            <div>
+              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">4</p>
+              <p className="text-white/80 text-sm mt-1">frentes ativas de trabalho</p>
+            </div>
           </div>
         </div>
       </section>
@@ -77,77 +103,84 @@ export default function Home() {
                 style={{
                   backgroundImage: 'url(https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80)',
                 }}
+                role="img"
+                aria-label="Crianças e jovens da Associação Pró-Paraíso em atividade"
               />
-              <div className="absolute inset-0 bg-black/40 rounded-2xl" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button
-                  type="button"
-                  className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center text-ngo-text hover:bg-white transition shadow-lg"
-                  aria-label="Assistir vídeo"
-                >
-                  <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-2xl" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* O que fazemos - fundo amarelo claro, lista + imagem */}
+      {/* O que fazemos - grid 2x2 de cards em destaque */}
       <section className="section-padding bg-ngo-yellow-light">
         <div className="container-custom">
-          <span className="section-label mb-4 block">O que fazemos</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ngo-text leading-tight mb-6 font-sans max-w-3xl">
-            Alguns dos projetos que oferecemos para nossas crianças e jovens
-          </h2>
-          <p className="text-ngo-text-muted max-w-2xl mb-12">
-            Esporte, educação, solidariedade e eventos que fortalecem vínculos e abrem caminhos.
-          </p>
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div className="space-y-8">
-              {[
-                {
-                  title: 'Esporte em Ação',
-                  desc: 'Futebol de campo, futsal e society. Socialização, rotina e um espaço seguro para crianças e jovens.',
-                  icon: '⚽',
-                },
-                {
-                  title: 'Aprender para Crescer',
-                  desc: 'Reforço escolar de segunda a sexta para crianças de 6 a 12 anos. Rotina, confiança e aprendizado no próprio ritmo.',
-                  icon: '📚',
-                },
-                {
-                  title: 'Caixinhas de Natal',
-                  desc: 'Cartinha, brinquedo, roupa e sapato. Uma tradição de anos que já presenteou centenas de crianças.',
-                  icon: '🎁',
-                },
-                {
-                  title: 'Solidariedade em Ação',
-                  desc: 'Campanhas, cestas básicas e apoio quando a necessidade aperta. Resposta rápida e digna.',
-                  icon: '🤝',
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4">
-                  <span className="text-2xl flex-shrink-0 w-10 h-10 flex items-center justify-center rounded bg-ngo-text text-white font-bold text-lg">
-                    {item.icon}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-bold text-ngo-text mb-2 font-sans">{item.title}</h3>
-                    <p className="text-ngo-text-muted leading-relaxed">{item.desc}</p>
-                  </div>
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <span className="section-label mb-4 block">O que fazemos</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ngo-text leading-tight mb-6 font-sans">
+              Alguns dos projetos que oferecemos para nossas crianças e jovens
+            </h2>
+            <p className="text-ngo-text-muted text-lg leading-relaxed">
+              Esporte, educação, solidariedade e eventos que fortalecem vínculos e abrem caminhos.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-5 md:gap-6">
+            {[
+              {
+                title: 'Esporte em Ação',
+                desc: 'Futebol de campo, futsal e society. Socialização, rotina e um espaço seguro para crianças e jovens.',
+                icon: '⚽',
+                iconBg: 'bg-ngo-green',
+                accent: 'hover:border-ngo-green',
+                href: '/projetos#esporte',
+              },
+              {
+                title: 'Aprender para Crescer',
+                desc: 'Reforço escolar de segunda a sexta para crianças de 6 a 12 anos. Rotina, confiança e aprendizado no próprio ritmo.',
+                icon: '📚',
+                iconBg: 'bg-ngo-yellow',
+                accent: 'hover:border-ngo-yellow',
+                href: '/projetos#aprender',
+              },
+              {
+                title: 'Caixinhas de Natal',
+                desc: 'Cartinha, brinquedo, roupa e sapato. Uma tradição de anos que já presenteou centenas de crianças.',
+                icon: '🎁',
+                iconBg: 'bg-ngo-orange',
+                accent: 'hover:border-ngo-orange',
+                href: '/projetos#caixinhas',
+              },
+              {
+                title: 'Solidariedade em Ação',
+                desc: 'Campanhas, cestas básicas e apoio quando a necessidade aperta. Resposta rápida e digna.',
+                icon: '🤝',
+                iconBg: 'bg-primary',
+                accent: 'hover:border-primary',
+                href: '/projetos#solidariedade',
+              },
+            ].map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className={`group relative bg-white rounded-2xl p-7 md:p-8 border-2 border-transparent shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 ${item.accent}`}
+              >
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl ${item.iconBg} flex items-center justify-center text-3xl md:text-4xl mb-5 shadow-sm`}>
+                  <span aria-hidden>{item.icon}</span>
                 </div>
-              ))}
-            </div>
-            <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-ngo-black/10 order-first lg:order-none">
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80)',
-                }}
-              />
-            </div>
+                <h3 className="font-bebas text-2xl md:text-3xl text-ngo-text mb-3 tracking-wide leading-none">
+                  {item.title}
+                </h3>
+                <p className="text-ngo-text-muted leading-relaxed mb-6">{item.desc}</p>
+                <span className="inline-flex items-center gap-3 bg-ngo-text text-white font-medium text-sm pl-5 pr-2 py-2 rounded-full group-hover:bg-ngo-black transition-colors">
+                  Saiba mais
+                  <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+                    <svg className="w-4 h-4 text-ngo-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -214,30 +247,40 @@ export default function Home() {
               <p className="text-white/70 leading-relaxed mb-10">
                 Queremos que você saiba exatamente onde o seu apoio está sendo aplicado. Comprometemo-nos com total transparência.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { label: 'Esporte e atividades', pct: '35', color: 'bg-ngo-green' },
-                  { label: 'Educação e reforço', pct: '30', color: 'bg-ngo-yellow' },
-                  { label: 'Campanhas e eventos', pct: '25', color: 'bg-purple-400' },
-                  { label: 'Estrutura e gestão', pct: '10', color: 'bg-pink-400' },
-                ].map((item) => (
-                  <div key={item.label} className="flex items-center gap-3">
-                    <span className={`w-4 h-4 rounded ${item.color} flex-shrink-0`} />
-                    <span className="text-white font-medium">
-                      {item.pct}% {item.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <Link
+                href="/impacto"
+                className="inline-flex items-center gap-2 text-ngo-yellow font-medium group"
+              >
+                Ver relatório de impacto
+                <span className="group-hover:translate-x-1 transition">→</span>
+              </Link>
             </div>
-            <div className="flex justify-center">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full border-[20px] border-ngo-yellow/40 flex items-center justify-center">
-                <div className="w-full h-full rounded-full border-[20px] border-ngo-green/60 flex items-center justify-center">
-                  <div className="w-3/4 h-3/4 rounded-full border-[20px] border-purple-400/60 flex items-center justify-center">
-                    <span className="text-white text-2xl font-bold">100%</span>
+            <div className="space-y-5" role="list" aria-label="Distribuição das doações">
+              {[
+                { label: 'Esporte e atividades', pct: 35, color: 'bg-ngo-green' },
+                { label: 'Educação e reforço escolar', pct: 30, color: 'bg-ngo-yellow' },
+                { label: 'Campanhas e eventos', pct: 25, color: 'bg-ngo-orange' },
+                { label: 'Estrutura e gestão', pct: 10, color: 'bg-primary' },
+              ].map((item) => (
+                <div key={item.label} role="listitem">
+                  <div className="flex items-baseline justify-between mb-2">
+                    <span className="text-white font-medium">{item.label}</span>
+                    <span className="text-white font-bebas text-2xl leading-none">{item.pct}%</span>
+                  </div>
+                  <div
+                    className="h-2.5 w-full bg-white/10 rounded-full overflow-hidden"
+                    aria-hidden="true"
+                  >
+                    <div
+                      className={`h-full ${item.color} rounded-full transition-all duration-700 ease-out`}
+                      style={{ width: `${item.pct}%` }}
+                    />
                   </div>
                 </div>
-              </div>
+              ))}
+              <p className="text-white/50 text-xs mt-4">
+                Valores referentes à distribuição média do orçamento anual.
+              </p>
             </div>
           </div>
         </div>
@@ -272,39 +315,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Eventos (opcional) */}
+      {/* Agenda recorrente — atividades contínuas e campanhas por época */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold text-ngo-text mb-10 font-sans">Nossos eventos</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-ngo-yellow-light rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
-              <div className="flex-shrink-0">
-                <span className="text-4xl font-bold text-ngo-text leading-none block">13</span>
-                <span className="text-ngo-text-muted text-sm font-medium uppercase tracking-wider">Abr</span>
-              </div>
-              <div className="flex-1">
-                <span className="text-ngo-text-muted text-xs font-medium uppercase tracking-wider mb-2 block">Próximo evento</span>
-                <h3 className="text-xl font-bold text-ngo-text mb-2 font-sans">Um dia com nossas crianças</h3>
-                <Link href="/projetos" className="inline-flex items-center gap-2 text-ngo-text font-medium mt-2 group">
-                  Saiba mais
-                  <span className="group-hover:translate-x-1 transition">→</span>
-                </Link>
-              </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <div>
+              <span className="section-label mb-4 block">Agenda</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-ngo-text font-sans">Quando acontecem as ações</h2>
             </div>
-            <div className="bg-ngo-yellow-light rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
-              <div className="flex-shrink-0">
-                <span className="text-4xl font-bold text-ngo-text leading-none block">25</span>
-                <span className="text-ngo-text-muted text-sm font-medium uppercase tracking-wider">Abr</span>
+            <a
+              href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20receber%20avisos%20dos%20próximos%20eventos%20da%20Pró-Paraíso"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary-dark font-medium group self-start md:self-auto"
+            >
+              Receber avisos dos próximos eventos
+              <span className="group-hover:translate-x-1 transition">→</span>
+            </a>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                when: 'Seg a Sex',
+                title: 'Reforço escolar',
+                desc: 'Aulas diárias para crianças de 6 a 12 anos.',
+              },
+              {
+                when: 'Sáb e Dom',
+                title: 'Esporte em ação',
+                desc: 'Treinos de futebol, futsal e society.',
+              },
+              {
+                when: 'Dezembro',
+                title: 'Caixinhas de Natal',
+                desc: 'Cartinha, brinquedo, roupa e sapato para centenas de crianças.',
+              },
+              {
+                when: 'Ano todo',
+                title: 'Campanhas solidárias',
+                desc: 'Cestas básicas e apoio emergencial quando a necessidade aperta.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-ngo-yellow-light rounded-2xl p-6">
+                <span className="inline-block text-ngo-text-muted text-xs font-semibold uppercase tracking-wider mb-3 px-2 py-1 rounded bg-white/60">
+                  {item.when}
+                </span>
+                <h3 className="text-lg font-bold text-ngo-text mb-2 font-sans">{item.title}</h3>
+                <p className="text-ngo-text-muted text-sm leading-relaxed">{item.desc}</p>
               </div>
-              <div className="flex-1">
-                <span className="text-ngo-text-muted text-xs font-medium uppercase tracking-wider mb-2 block">Próximo evento</span>
-                <h3 className="text-xl font-bold text-ngo-text mb-2 font-sans">Campanha solidária</h3>
-                <Link href="/projetos" className="inline-flex items-center gap-2 text-ngo-text font-medium mt-2 group">
-                  Saiba mais
-                  <span className="group-hover:translate-x-1 transition">→</span>
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

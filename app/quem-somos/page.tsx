@@ -1,156 +1,300 @@
+import Link from 'next/link'
+
+const timeline = [
+  {
+    year: '2015',
+    title: 'O começo com 50 alunos',
+    body: 'No início, eram 50 alunos e o projeto era só futebol. Não tinha uniforme nem material esportivo — muitas crianças treinavam com o que tinham. Mesmo assim, o projeto acontecia: com presença, disciplina e compromisso de fazer direito.',
+    footnote: '24 de setembro de 2015 — registro oficial, com documentação e organização formal.',
+    dotColor: 'bg-ngo-yellow',
+  },
+  {
+    year: '2016–2019',
+    title: 'A comunidade acredita e o projeto cresce',
+    body: 'De 50 para 100, depois 150, e um salto importante: 300 alunos. Três modalidades — futebol, futsal e karatê. Já com uma característica clara: não era só sobre esporte, era sobre oferecer caminho, rotina e proteção.',
+    dotColor: 'bg-ngo-green',
+  },
+  {
+    year: '2020–2023',
+    title: 'Mais modalidades, mais estrutura',
+    body: 'Comerciantes e apoiadores se aproximaram. Chegaram uniformes, calções, meiões, coletes e material esportivo. A criança passou a encontrar aqui o que precisava para participar com dignidade. Até o lanche virou realidade via patrocínio.',
+    dotColor: 'bg-ngo-orange',
+  },
+  {
+    year: '2024+',
+    title: '12+ modalidades, base de 800 alunos',
+    body: 'Futebol de campo, society, futsal, reforço escolar (manhã e tarde), muay thai, capoeira, karatê, judô, pilates, zumba, aula de sertanejo. Caminhando para 1.000 alunos. Expansão para o Jardim Tapicerica da Serra (Jardim Banca Flor), com cerca de 300 alunos no futebol de campo.',
+    dotColor: 'bg-primary',
+  },
+  {
+    year: 'Há 5 anos',
+    title: 'Caixinhas de Natal',
+    body: 'A criança escreve uma cartinha pedindo um brinquedo; o padrinho entrega brinquedo, roupa e sapato. De 50 crianças para quase 400 no último ano, com ajuda de comerciantes e padrinhos da comunidade.',
+    dotColor: 'bg-ngo-yellow',
+  },
+]
+
+const valores = [
+  {
+    title: 'Seriedade e transparência',
+    desc: 'A transparência não é frase bonita — é a razão de a Associação estar de pé até hoje. Tudo é registrado, organizado e prestado contas. Quando alguém apoia, a ajuda chega onde precisa chegar.',
+    icon: '🔎',
+    iconBg: 'bg-ngo-yellow',
+  },
+  {
+    title: 'Solidariedade com forma',
+    desc: 'Solidariedade também tem forma. Não é só doação — é escuta, respeito e construção junto, sem pressa e sem superioridade.',
+    icon: '🤲',
+    iconBg: 'bg-ngo-green',
+  },
+  {
+    title: 'Presença que transforma',
+    desc: 'Quando existe presença, existe transformação. E quando existe comunidade, ninguém precisa atravessar a necessidade sozinho.',
+    icon: '💛',
+    iconBg: 'bg-ngo-orange',
+  },
+]
+
 export default function QuemSomos() {
   return (
-    <div className="section-padding">
-      <div className="container-custom">
-        {/* Hero */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bebas mb-6 text-primary">
-            QUEM SOMOS
+    <div className="bg-ngo-cream">
+      {/* Hero */}
+      <section className="relative bg-ngo-black text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-35"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80)',
+          }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ngo-black/70 via-ngo-black/60 to-ngo-black" aria-hidden />
+        <div className="container-custom relative z-10 pt-24 pb-20 md:pt-32 md:pb-24">
+          <span className="section-label text-white/80 border-ngo-yellow mb-5 block">Quem somos</span>
+          <h1 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-6 max-w-4xl">
+            Amor que vira ação, presença que transforma
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
             Uma organização comprometida com a dignidade humana, a empatia prática e um impacto que se mede no cotidiano.
           </p>
         </div>
+      </section>
 
-        {/* Quem somos - texto principal */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4 leading-relaxed">
-              <p>
-                Se existe algo que nos move desde o começo, é a recusa em tratar a falta do básico como algo normal. Quando a mesa está vazia e a necessidade é urgente, a solidariedade deixa de ser conceito e vira ação.
+      {/* Manifesto */}
+      <section className="section-padding bg-ngo-yellow-light">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-5">
+              <span className="section-label mb-4 block">Manifesto</span>
+              <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text mb-6">
+                A recusa em tratar a falta do básico como algo normal
+              </h2>
+              <p className="text-ngo-text-muted leading-relaxed">
+                Quando a mesa está vazia e a necessidade é urgente, a solidariedade deixa de ser conceito e vira ação.
               </p>
+            </div>
+            <div className="lg:col-span-7 space-y-5 text-ngo-text leading-relaxed">
               <p>
                 A nossa organização nasceu desse incômodo e de um desejo simples, mas teimoso, de fazer diferente. No início, éramos apenas pessoas dispostas a ajudar com o que tinham: tempo, presença, escuta e mãos para trabalhar. Com o tempo, a ideia ganhou corpo. Crescemos porque transformamos intenção em prática, e prática em compromisso.
               </p>
               <p>
-                Ao longo da trajetória, entendemos uma coisa que mudou tudo. Solidariedade não é só doar. Solidariedade é estar presente, é ouvir com respeito, é construir junto com quem é atendido, sem pressa e sem superioridade. Cada ação realizada, cada mesa compartilhada e cada sorriso recebido foram lembranças concretas de que o impacto social nasce do vínculo, não apenas do recurso.
+                Ao longo da trajetória, entendemos uma coisa que mudou tudo. Solidariedade não é só doar. Solidariedade é estar presente, é ouvir com respeito, é construir junto com quem é atendido, sem pressa e sem superioridade.
               </p>
               <p>
-                Nós somos um coletivo de pessoas. Voluntários e apoiadores, mas também as famílias atendidas, que fazem parte da história e ajudam a desenhar os próximos passos. Tivemos desafios e aprendizados, e foi isso que moldou quem somos hoje: uma organização comprometida com a dignidade humana, com a empatia prática e com um impacto que se mede no cotidiano.
+                Nós somos um coletivo de pessoas. Voluntários e apoiadores, mas também as famílias atendidas, que fazem parte da história e ajudam a desenhar os próximos passos. Tivemos desafios e aprendizados, e foi isso que moldou quem somos hoje.
               </p>
-              <p>
-                Seguimos com o mesmo propósito que nos trouxe até aqui. Levar esperança, cuidado e união a quem mais precisa. E sustentar uma crença que guia cada decisão: quando a gente se une de verdade, ninguém fica para trás.
+              <p className="font-bebas text-2xl md:text-3xl tracking-wide text-ngo-text pt-4 leading-tight">
+                Quando a gente se une de verdade, ninguém fica para trás.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* A nossa história */}
-        <section className="mb-16 bg-gray-50 py-12 rounded-lg">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bebas mb-6 text-primary">A nossa história</h2>
-            <div className="text-gray-700 space-y-4 leading-relaxed">
-              <p>
-                A Associação Pró-Paraíso nasceu do jeito que as coisas mais verdadeiras nascem. Com pouca estrutura, muita vontade, e um incômodo que não deixava a gente ficar parado. A gente via de perto o que acontece quando uma criança não tem para onde ir, quando um jovem cresce sem referência, e quando uma família atravessa dificuldades sem rede de apoio. E decidiu fazer algo que fosse simples, mas constante. Estar presente.
-              </p>
-              <p>
-                No começo, tudo era pequeno. Poucas pessoas, poucos recursos, uma atividade que reunia crianças e adolescentes e criava um lugar seguro para eles estarem. Não era perfeito, mas era real. E, principalmente, era sério. A comunidade percebeu isso cedo. E quando a comunidade confia, ela participa. Ela chama, ela se aproxima, ela apoia.
-              </p>
-              <p>
-                Foi assim que o projeto cresceu. Não por promessa, mas por prática. Aos poucos, as atividades aumentaram, os horários se ampliaram, novas modalidades e ações foram surgindo, e a Associação deixou de ser apenas um espaço de esporte ou de reforço escolar. Virou um ponto de encontro, de cuidado e de pertencimento.
-              </p>
-              <p>
-                Hoje, a Associação Pró-Paraíso é reconhecida por ser próxima. Por não tratar pessoas como número. Por ser transparente. Por trabalhar com respeito, com responsabilidade e com a coragem de fazer o certo, mesmo quando dá trabalho. O que a gente constrói aqui é simples de explicar. É um lugar onde o amor vira ação e onde a ação vira oportunidade.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Linha do tempo */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bebas mb-8 text-primary">Linha do tempo</h2>
-            <div className="space-y-8">
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="text-xl font-semibold text-primary mb-2">2015 – O começo com 50 alunos</h3>
-                <p className="text-gray-700">
-                  No início, eram 50 alunos, e o projeto era só futebol. Não tinha uniforme, não tinha material esportivo. Muitas crianças precisavam treinar com o que tinham. Mesmo assim, o projeto acontecia. Com presença, com disciplina e com o compromisso de fazer direito, mesmo começando do zero.
+      {/* Nossa história + stats */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-7">
+              <span className="section-label mb-4 block">A nossa história</span>
+              <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text mb-8">
+                Pouca estrutura, muita vontade e um incômodo que não deixava a gente parado
+              </h2>
+              <div className="space-y-5 text-ngo-text-muted leading-relaxed">
+                <p>
+                  A Associação Pró-Paraíso nasceu do jeito que as coisas mais verdadeiras nascem. A gente via de perto o que acontece quando uma criança não tem para onde ir, quando um jovem cresce sem referência, e quando uma família atravessa dificuldades sem rede de apoio. E decidiu fazer algo simples, mas constante: estar presente.
                 </p>
-                <p className="text-gray-600 text-sm mt-2">24 de setembro de 2015 – Projeto registrado oficialmente, com documentação e organização formal.</p>
-              </div>
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="text-xl font-semibold text-primary mb-2">2016 a 2019 – O projeto cresce porque a comunidade acredita</h3>
-                <p className="text-gray-700">
-                  De 50 passou para 100, depois 150, e então veio um salto importante. O projeto chegou a 300 alunos. Três modalidades: futebol, futsal e karatê. Já com uma característica clara: não era só sobre esporte. Era sobre oferecer caminho, rotina e proteção para crianças e jovens.
+                <p>
+                  No começo, tudo era pequeno. Poucas pessoas, poucos recursos, uma atividade que reunia crianças e adolescentes e criava um lugar seguro para eles estarem. Não era perfeito, mas era real. E, principalmente, era sério. A comunidade percebeu isso cedo — e quando a comunidade confia, ela participa.
                 </p>
-              </div>
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="text-xl font-semibold text-primary mb-2">2020 a 2023 – Mais modalidades, mais estrutura</h3>
-                <p className="text-gray-700">
-                  Comerciantes e apoiadores se aproximaram. Chegaram os uniformes, os calções, os meiões, os coletes e o material esportivo. A criança passou a encontrar aqui o que precisava para participar com dignidade. Até o lanche virou realidade por meio de patrocínios.
+                <p>
+                  Foi assim que o projeto cresceu. Não por promessa, mas por prática. Aos poucos, as atividades aumentaram, os horários se ampliaram, e a Associação deixou de ser apenas um espaço de esporte ou de reforço escolar. Virou um ponto de encontro, de cuidado e de pertencimento.
                 </p>
-              </div>
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="text-xl font-semibold text-primary mb-2">2024 em diante – De 1 modalidade para 12 ou 13, base de 800 alunos</h3>
-                <p className="text-gray-700">
-                  Futebol de campo, society, futsal, reforço escolar de manhã e à tarde, muay thai, capoeira, karatê, judô, pilates, zumba, aula de sertanejo. Caminhando para 1.000 alunos. Expansão para o Jardim Tapicerica da Serra (Jardim Banca Flor), com cerca de 300 alunos no futebol de campo.
-                </p>
-              </div>
-              <div className="border-l-4 border-secondary pl-6">
-                <h3 className="text-xl font-semibold text-primary mb-2">Caixinhas de Natal</h3>
-                <p className="text-gray-700">
-                  Uma ideia de cerca de cinco anos. A criança escreve uma cartinha pedindo um brinquedo; o padrinho entrega brinquedo, roupa e sapato. De 50 crianças para quase 400 no último ano. Com a ajuda de comerciantes e padrinhos da comunidade.
+                <p>
+                  Hoje, somos reconhecidos por sermos próximos. Por não tratar pessoas como número. Por sermos transparentes. Um lugar onde o amor vira ação e a ação vira oportunidade.
                 </p>
               </div>
             </div>
+            <aside className="lg:col-span-5 space-y-4">
+              <StatCard bg="bg-ngo-black" text="text-white" labelColor="text-ngo-yellow" number="800+" label="alunos ativos hoje" sub="Caminhando para 1.000" />
+              <StatCard bg="bg-ngo-yellow-light" text="text-ngo-text" labelColor="text-ngo-text-muted" number="12+" label="modalidades" sub="De esporte a reforço escolar" />
+              <StatCard bg="bg-ngo-green" text="text-ngo-text" labelColor="text-ngo-text/70" number="10+" label="anos de atuação" sub="Desde 2015 em Paraisópolis" />
+              <StatCard bg="bg-white border border-ngo-border" text="text-ngo-text" labelColor="text-ngo-text-muted" number="2" label="unidades" sub="Paraisópolis e Jardim Tapicerica" />
+            </aside>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Identidade percebida */}
-        <section className="mb-16 bg-primary text-white py-12 rounded-lg">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bebas mb-6">Como somos percebidos</h2>
-            <p className="text-lg mb-4 leading-relaxed opacity-95">
-              Quem conhece a Associação Pró-Paraíso deve sentir, antes de tudo, acolhimento. Um acolhimento que não é discurso. É aquele que se percebe no jeito de receber, no cuidado com a palavra, na atenção ao detalhe, e no respeito pela história de cada pessoa.
-            </p>
-            <p className="text-lg mb-4 leading-relaxed opacity-95">
-              Somos reconhecidos como um projeto humano, confiável e próximo da comunidade. A Associação Pró-Paraíso é percebida como um lugar de cuidado, união e esperança, onde o amor vira ação e se transforma em oportunidades reais de desenvolvimento.
-            </p>
+      {/* Linha do tempo */}
+      <section className="section-padding bg-ngo-cream">
+        <div className="container-custom">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <span className="section-label mb-4 block">Linha do tempo</span>
+            <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text">
+              Do primeiro treino ao que somos hoje
+            </h2>
           </div>
-        </section>
+          <div className="relative">
+            {/* Linha vertical (visível em md+) */}
+            <div className="hidden md:block absolute left-6 top-2 bottom-2 w-px bg-ngo-border" aria-hidden />
+            <ol className="space-y-6 md:space-y-8">
+              {timeline.map((item) => (
+                <li key={item.year} className="relative md:pl-20">
+                  {/* Dot */}
+                  <span
+                    className={`hidden md:flex absolute left-0 top-2 w-12 h-12 rounded-full ${item.dotColor} items-center justify-center shadow-sm`}
+                    aria-hidden
+                  >
+                    <span className="w-3 h-3 rounded-full bg-white" />
+                  </span>
+                  <article className="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-ngo-border/60">
+                    <div className="flex flex-wrap items-baseline gap-4 mb-3">
+                      <span className="font-bebas text-3xl md:text-4xl tracking-wide text-ngo-text leading-none">
+                        {item.year}
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold text-ngo-text font-sans">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="text-ngo-text-muted leading-relaxed">{item.body}</p>
+                    {item.footnote && (
+                      <p className="text-xs text-ngo-text-muted/80 mt-3 pt-3 border-t border-ngo-border">
+                        {item.footnote}
+                      </p>
+                    )}
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
 
-        {/* O que nos move e Valores na prática */}
-        <section className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bebas mb-6 text-primary">O que nos move</h2>
-            <p className="text-gray-700 mb-10 leading-relaxed">
-              O que nos move é a recusa em aceitar que tanta gente viva sem o básico. Por isso, a Associação trabalha para fortalecer vínculos, abrir caminhos e criar oportunidades reais de desenvolvimento, começando pelo que é mais urgente e mais humano. Quando existe presença, existe transformação. E quando existe comunidade, ninguém precisa atravessar a necessidade sozinho.
-            </p>
-            <h2 className="text-3xl font-bebas mb-6 text-primary">Valores na prática</h2>
-            <div className="space-y-6">
-              <div className="p-6 bg-white border-l-4 border-primary rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Seriedade e transparência</h3>
-                <p className="text-gray-700">
-                  A seriedade vem antes de tudo. A transparência não é uma frase bonita para colocar no site. É a razão de a Associação estar de pé até hoje. Tudo o que é feito é registrado, organizado e prestado contas. Quando alguém apoia, a ajuda chega onde precisa chegar.
-                </p>
-              </div>
-              <div className="p-6 bg-white border-l-4 border-secondary rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-3 text-primary">Solidariedade com forma</h3>
-                <p className="text-gray-700">
-                  A solidariedade também tem forma. Não é só doação. É escuta, respeito e construção junto, sem pressa e sem superioridade.
-                </p>
-              </div>
+      {/* Como somos percebidos — pull quote */}
+      <section className="section-padding bg-ngo-black text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="section-label text-white/80 border-ngo-yellow mb-6 inline-block">Como somos percebidos</span>
+            <blockquote className="font-bebas text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-wide mb-10">
+              &ldquo;Um lugar de cuidado, união e esperança, onde o amor vira ação e se transforma em oportunidades reais.&rdquo;
+            </blockquote>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <p className="text-white/80 leading-relaxed">
+                Quem conhece a Associação deve sentir, antes de tudo, acolhimento. Um acolhimento que não é discurso — é aquele que se percebe no jeito de receber, no cuidado com a palavra, na atenção ao detalhe, e no respeito pela história de cada pessoa.
+              </p>
+              <p className="text-white/80 leading-relaxed">
+                Somos reconhecidos como um projeto humano, confiável e próximo da comunidade. Um lugar onde presença e vínculo andam juntos, e onde cada decisão é guiada pela dignidade de quem é atendido.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA */}
-        <section className="text-center">
-          <div className="max-w-2xl mx-auto">
-            <p className="text-lg text-gray-600 mb-6">
-              Quer conhecer nossa atuação de perto ou saber como apoiar?
-            </p>
+      {/* Valores na prática */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mb-12">
+            <span className="section-label mb-4 block">Valores na prática</span>
+            <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text">
+              O que nos move, todos os dias
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+            {valores.map((v) => (
+              <div
+                key={v.title}
+                className="bg-white rounded-2xl p-7 md:p-8 border border-ngo-border/60 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl ${v.iconBg} flex items-center justify-center text-3xl md:text-4xl mb-5 shadow-sm`}>
+                  <span aria-hidden>{v.icon}</span>
+                </div>
+                <h3 className="font-bebas text-2xl md:text-3xl tracking-wide text-ngo-text mb-3 leading-none">
+                  {v.title}
+                </h3>
+                <p className="text-ngo-text-muted leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-auto lg:max-w-7xl my-16 md:my-24 rounded-2xl">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(11,7,6,0.6), rgba(11,7,6,0.55)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+          }}
+          aria-hidden
+        />
+        <div className="container-custom relative z-10 py-16 md:py-20 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-sans max-w-3xl mx-auto">
+            Quer conhecer nossa atuação de perto?
+          </h2>
+          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+            Visite, apoie ou seja voluntário. Sua presença transforma.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20conhecer%20melhor%20a%20Associação%20Pró-Paraíso"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
             >
-              Fale Conosco
+              Fale conosco
             </a>
+            <Link
+              href="/como-apoiar#doar"
+              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-cream transition"
+            >
+              Quero doar
+            </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function StatCard({
+  bg,
+  text,
+  labelColor,
+  number,
+  label,
+  sub,
+}: {
+  bg: string
+  text: string
+  labelColor: string
+  number: string
+  label: string
+  sub: string
+}) {
+  return (
+    <div className={`${bg} ${text} rounded-2xl p-6 md:p-7`}>
+      <p className={`text-xs font-semibold uppercase tracking-widest ${labelColor} mb-2`}>{label}</p>
+      <p className="font-bebas text-5xl md:text-6xl leading-none tracking-wide mb-2">{number}</p>
+      <p className={`text-sm ${labelColor}`}>{sub}</p>
     </div>
   )
 }

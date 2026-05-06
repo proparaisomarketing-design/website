@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -9,7 +10,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Logo e sobre */}
           <div className="lg:col-span-1">
-            <h3 className="text-xl font-bebas mb-4 text-white">ASSOCIAÇÃO PRÓ-PARAÍSO</h3>
+            <Image
+              src="/logo/logo.png"
+              alt="Associação Pró-Paraíso"
+              width={1356}
+              height={444}
+              className="h-12 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-white/75 text-sm leading-relaxed">
               Amor que transforma, comunidade que cresce. Paraisópolis, São Paulo.
             </p>

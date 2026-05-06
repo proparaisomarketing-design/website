@@ -1,35 +1,98 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { Roboto, Bebas_Neue } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InstallPrompt from '@/components/InstallPrompt'
 import ScrollReveal from '@/components/ScrollReveal'
 
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-roboto',
+  display: 'swap',
+})
+
+const bebas = Bebas_Neue({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bebas',
+  display: 'swap',
+})
+
+const siteUrl = 'https://associacaoproparaiso.org.br'
+
 export const metadata: Metadata = {
-  title: 'Associação Pró-Paraíso - Transformando vidas através do cuidado',
-  description: 'Associação Pró-Paraíso: Amor que transforma, comunidade que cresce. Atuando em Paraisópolis, São Paulo, desde 2015.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Associação Pró-Paraíso — Transformando vidas em Paraisópolis',
+    template: '%s | Associação Pró-Paraíso',
+  },
+  description:
+    'Desde 2015 em Paraisópolis: esporte, reforço escolar, campanhas e eventos que transformam a vida de crianças e jovens. Conheça, acompanhe e apoie.',
+  applicationName: 'Pró-Paraíso',
+  keywords: [
+    'Associação Pró-Paraíso',
+    'Paraisópolis',
+    'ONG São Paulo',
+    'reforço escolar',
+    'esporte social',
+    'doação',
+    'voluntariado',
+  ],
   manifest: '/manifest.json',
-  themeColor: '#0037FE',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: siteUrl,
+    siteName: 'Associação Pró-Paraíso',
+    title: 'Associação Pró-Paraíso — Transformando vidas em Paraisópolis',
+    description:
+      'Amor que transforma, comunidade que cresce. Projetos de esporte, educação e solidariedade em Paraisópolis, São Paulo.',
+    images: [
+      {
+        url: '/logo/icon.png',
+        width: 450,
+        height: 450,
+        alt: 'Associação Pró-Paraíso',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Associação Pró-Paraíso',
+    description:
+      'Amor que transforma, comunidade que cresce. Projetos em Paraisópolis, São Paulo.',
+    images: ['/logo/icon.png'],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'Pró-Paraíso',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   icons: {
     icon: [
-      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/logo/icon.svg', type: 'image/svg+xml' },
+      { url: '/logo/icon.png', sizes: '450x450', type: 'image/png' },
     ],
     apple: [
-      { url: '/icons/icon-152x152.png', sizes: '152x152', type: 'image/png' },
-      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/logo/icon.png', sizes: '450x450', type: 'image/png' },
     ],
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#3B95D2',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -38,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${roboto.variable} ${bebas.variable}`}>
       <body>
         <Header />
         <main className="min-h-screen">

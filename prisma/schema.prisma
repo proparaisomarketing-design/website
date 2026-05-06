@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Inscricao {
+  id                 Int      @id @default(autoincrement())
+  createdAt          DateTime @default(now())
+  status             String   @default("pendente") // pendente | em_analise | aprovada | recusada
+
+  // Criança / Jovem
+  criancaNome        String
+  criancaNascimento  String   // YYYY-MM-DD
+  criancaSexo        String?
+  criancaCpf         String?
+  criancaRg          String?
+  criancaEscola      String?
+  criancaSerie       String?
+  criancaPeriodo     String?  // manha | tarde | noite | integral
+
+  // Responsável
+  responsavelNome        String
+  responsavelParentesco  String
+  responsavelCpf         String
+  responsavelTelefone    String
+  responsavelWhatsapp    String?
+  responsavelEmail       String?
+  enderecoCep            String?
+  enderecoRua            String?
+  enderecoNumero         String?
+  enderecoComplemento    String?
+  enderecoBairro         String?
+  enderecoCidade         String?
+
+  // Projetos desejados (JSON array string)
+  projetos           String   // e.g. '["esporte","aprender"]'
+  modalidades        String?  // campos livres por projeto
+  disponibilidade    String?
+
+  // Saúde
+  alergias           String?
+  medicamentos       String?
+  restricoesMedicas  String?
+  condicoesEspeciais String?
+
+  // Emergência
+  emergenciaNome     String?
+  emergenciaTelefone String?
+  emergenciaParentesco String?
+
+  // Autorizações
+  autorizaImagem     Boolean  @default(false)
+  cienteRegulamento  Boolean  @default(false)
+
+  // Origem
+  comoConheceu       String?
+  observacoes        String?
+}

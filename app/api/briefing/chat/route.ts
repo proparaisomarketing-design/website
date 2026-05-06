@@ -139,7 +139,7 @@ IMPORTANTE:
   }
 }
 
-function getSectionContext(section: number, savedData: Record<string, string>, currentQuestion?: { title: string; description?: string; fieldName?: string; sectionTitle: string }): string {
+function getSectionContext(section: number, savedData: Record<string, string>, currentQuestion?: { title: string; description?: string; fieldName?: string; sectionTitle: string; questionNumber?: string; isEmpty?: boolean }): string {
   const sections = {
     0: 'Seção de Introdução - Apresentando o briefing e explicando o processo',
     1: 'BLOCO 1 - ESSÊNCIA E IDENTIDADE: Nome, valores, história de origem, identidade visual',

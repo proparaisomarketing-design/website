@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap');
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -38,8 +36,8 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg font-semibold
-           shadow-card hover:shadow-card-hover hover:bg-primary-dark hover:-translate-y-0.5
+    @apply inline-flex items-center justify-center bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold
+           shadow-card hover:shadow-card-hover hover:bg-ngo-black hover:-translate-y-0.5
            active:translate-y-0 active:shadow-card
            transition-all duration-300 ease-out;
   }

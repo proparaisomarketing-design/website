@@ -26,7 +26,7 @@ export default function ComoApoiar() {
     <div className="section-padding">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bebas mb-6 text-primary">
+          <h1 className="text-5xl md:text-6xl font-bebas mb-6 text-primary-dark">
             COMO APOIAR
           </h1>
           <p className="text-xl text-gray-600">
@@ -43,7 +43,7 @@ export default function ComoApoiar() {
                 className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-primary"
               >
                 <div className="text-5xl mb-4">{forma.icone}</div>
-                <h2 className="text-2xl font-bebas mb-4 text-primary">
+                <h2 className="text-2xl font-bebas mb-4 text-primary-dark">
                   {forma.titulo}
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
@@ -55,7 +55,7 @@ export default function ComoApoiar() {
         </section>
 
         {/* Transparência */}
-        <section className="mb-16 bg-primary text-white py-12 rounded-lg">
+        <section className="mb-16 bg-primary-dark text-white py-12 rounded-lg">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl font-bebas mb-6 text-center">
               Por que fazemos assim
@@ -69,32 +69,32 @@ export default function ComoApoiar() {
         {/* Passos */}
         <section className="mb-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bebas mb-8 text-center text-primary">
+            <h2 className="text-3xl font-bebas mb-8 text-center text-primary-dark">
               Como começar
             </h2>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg">
-                <span className="text-2xl font-bebas text-primary shrink-0">1</span>
+                <span className="text-2xl font-bebas text-primary-dark shrink-0">1</span>
                 <div>
-                  <h3 className="font-semibold mb-2 text-primary">Entre em contato</h3>
+                  <h3 className="font-semibold mb-2 text-primary-dark">Entre em contato</h3>
                   <p className="text-gray-700">
                     Fale conosco pelo WhatsApp. Contamos o que fazemos, o que precisamos e como você pode ajudar.
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg">
-                <span className="text-2xl font-bebas text-primary shrink-0">2</span>
+                <span className="text-2xl font-bebas text-primary-dark shrink-0">2</span>
                 <div>
-                  <h3 className="font-semibold mb-2 text-primary">Conheça os projetos</h3>
+                  <h3 className="font-semibold mb-2 text-primary-dark">Conheça os projetos</h3>
                   <p className="text-gray-700">
                     Você pode agendar uma visita ou conhecer pelo site. Assim fica claro onde sua ajuda se encaixa.
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg">
-                <span className="text-2xl font-bebas text-primary shrink-0">3</span>
+                <span className="text-2xl font-bebas text-primary-dark shrink-0">3</span>
                 <div>
-                  <h3 className="font-semibold mb-2 text-primary">Escolha sua forma de apoio</h3>
+                  <h3 className="font-semibold mb-2 text-primary-dark">Escolha sua forma de apoio</h3>
                   <p className="text-gray-700">
                     Doação de materiais, parceria, voluntariado ou divulgação. Toda forma de apoio faz diferença.
                   </p>
@@ -106,7 +106,7 @@ export default function ComoApoiar() {
 
         {/* CTA Final */}
         <section className="text-center">
-          <div className="max-w-2xl mx-auto bg-primary text-white p-8 rounded-lg">
+          <div className="max-w-2xl mx-auto bg-primary-dark text-white p-8 rounded-lg">
             <h2 className="text-3xl font-bebas mb-4">
               PRONTO PARA FAZER A DIFERENÇA?
             </h2>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -21,10 +22,15 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl md:text-2xl font-bebas text-ngo-text font-bold">
-              ASSOCIAÇÃO PRÓ-PARAÍSO
-            </span>
+          <Link href="/" className="flex items-center" aria-label="Associação Pró-Paraíso — início">
+            <Image
+              src="/logo/logo.png"
+              alt="Associação Pró-Paraíso"
+              width={1356}
+              height={444}
+              priority
+              className="h-9 md:h-11 w-auto"
+            />
           </Link>
 
           {/* Desktop Menu - estilo NGO */}
@@ -50,6 +56,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu"

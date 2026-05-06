@@ -96,7 +96,7 @@ export default function BriefingChat({ currentSection, savedData }: BriefingChat
           
           const fieldName = (targetField as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).name
           const sectionTitle = activeSection.querySelector('h2')?.textContent?.trim() || ''
-          const domValue = targetField.value || ''
+          const domValue = (targetField as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).value || ''
           const savedValue = savedData?.[fieldName] || ''
           const isEmpty = !domValue.trim() && !savedValue.trim()
           
@@ -132,7 +132,7 @@ export default function BriefingChat({ currentSection, savedData }: BriefingChat
       const sectionTitle = activeSection.querySelector('h2')?.textContent?.trim() || ''
 
       // Verificar se está vazio (DOM e savedData)
-      const domValue = targetField.value || ''
+      const domValue = (targetField as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).value || ''
       const savedValue = savedData?.[fieldName] || ''
       const isEmpty = !domValue.trim() && !savedValue.trim()
 
