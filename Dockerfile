@@ -32,6 +32,10 @@ ENV HOSTNAME=0.0.0.0
 # Padrão para Coolify: volume persistente montado em /data
 ENV DATABASE_URL="file:/data/inscricoes.db"
 
+# Prisma CLI global — instala TODAS as deps transitivas (incluindo "effect")
+# necessárias pra rodar "prisma db push" no entrypoint
+RUN npm install -g --silent prisma@6.19.3
+
 RUN addgroup --system --gid 1001 nodejs \
  && adduser --system --uid 1001 nextjs
 
@@ -40,11 +44,10 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Prisma: schema + client gerado + engines + CLI mínimo pra "db push" no entrypoint
+# Prisma: schema + client gerado + engines (CLI já está instalado globalmente)
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma ./node_modules/@prisma
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/prisma ./node_modules/prisma
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma/client ./node_modules/@prisma/client
 
 # Diretório do banco persistente (Coolify monta volume aqui)
 RUN mkdir -p /data && chown -R nextjs:nodejs /data
