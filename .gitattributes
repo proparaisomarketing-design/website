@@ -1,0 +1,16 @@
+# Auto-detectar line endings, mas forçar LF em scripts shell
+* text=auto
+
+# Scripts shell SEMPRE com LF (rodam em Linux/Alpine no container)
+*.sh text eol=lf
+docker-entrypoint.sh text eol=lf
+
+# Binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary
