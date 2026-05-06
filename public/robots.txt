@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://associacaoproparaiso.org.br/sitemap.xml
+Sitemap: https://proparaiso.org/sitemap.xml

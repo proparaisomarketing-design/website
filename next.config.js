@@ -24,7 +24,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'associacaoproparaiso.org.br' },
+      { protocol: 'https', hostname: 'proparaiso.org' },
     ],
   },
 }

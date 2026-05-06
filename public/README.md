@@ -64,4 +64,4 @@ Para usar vídeos:
 
 Arquivos nesta pasta são acessíveis via:
 - `http://localhost:3000/images/...` (desenvolvimento)
-- `https://associacaoproparaiso.org.br/images/...` (produção)
+- `https://proparaiso.org/images/...` (produção)

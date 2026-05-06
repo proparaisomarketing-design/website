@@ -17,8 +17,8 @@ export async function POST(request: NextRequest) {
     const sessionId = data.session_id || 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9)
 
     // Configurações de email
-    const toEmail = 'contato@associacaoproparaiso.org.br'
-    const fromEmail = `noreply@${request.headers.get('host') || 'associacaoproparaiso.org.br'}`
+    const toEmail = 'contato@proparaiso.org'
+    const fromEmail = `noreply@${request.headers.get('host') || 'proparaiso.org'}`
 
     // Criar diretório para backups se não existir
     const backupDir = path.join(process.cwd(), 'briefing_backups')

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://associacaoproparaiso.org.br'
+  const baseUrl = 'https://proparaiso.org'
   const lastModified = new Date()
 
   const routes: { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }[] = [

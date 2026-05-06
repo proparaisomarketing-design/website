@@ -20,7 +20,7 @@ const bebas = Bebas_Neue({
   display: 'swap',
 })
 
-const siteUrl = 'https://associacaoproparaiso.org.br'
+const siteUrl = 'https://proparaiso.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
