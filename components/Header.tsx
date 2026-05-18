@@ -14,7 +14,7 @@ export default function Header() {
     { name: 'Impacto', href: '/impacto' },
     { name: 'Como Apoiar', href: '/como-apoiar' },
     { name: 'Contato', href: '/contato' },
-    { name: 'Briefing', href: '/briefing' },
+    { name: 'Cadastre-se', href: '/cadastre-se' },
   ]
 
   return (

@@ -3,62 +3,60 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className="bg-ngo-cream min-h-screen">
-      {/* Hero Section - vídeo institucional ao fundo */}
-      <section className="relative min-h-[90vh] flex flex-col justify-end overflow-hidden">
-        <div className="absolute inset-0 bg-secondary-dark">
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-          >
-            <source src="/videos/pro-paraiso-hero.mp4" type="video/mp4" />
-          </video>
-          {/* Lente quente por cima do vídeo — gradiente nas cores da logo, do topo ao rodapé, pra dar contraste no texto */}
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-secondary-dark/65 via-ngo-orange/55 to-secondary-dark/80"
-            aria-hidden
-          />
-        </div>
-        <div className="container-custom relative z-10 pb-16 pt-32 md:pt-40">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 font-sans">
-              Cuidado inclusivo para quem mais precisa
-            </h1>
-            <p className="text-xl text-white/90 mb-10 max-w-xl">
-              Há 10 anos em Paraisópolis e, mais recentemente, no Jardim Tapicerica da Serra. Transformando transparência em confiança e confiança em participação.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/como-apoiar#doar"
-                className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded transition hover:bg-ngo-yellow/90"
-              >
-                Quero doar
-              </Link>
-              <Link
-                href="/como-apoiar"
-                className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded transition hover:bg-ngo-cream"
-              >
-                Como apoiar
-              </Link>
-              <a
-                href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Associação%20Pró-Paraíso"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-transparent text-white font-medium px-6 py-4 rounded border border-white/80 hover:bg-white/10 transition"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-                Fale conosco
-              </a>
+      {/* Hero Section - texto à esquerda, vídeo institucional à direita */}
+      <section className="relative bg-secondary-dark text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary-dark via-ngo-orange/25 to-secondary-dark" aria-hidden />
+        <div className="container-custom relative z-10 pt-24 pb-16 md:pt-32 md:pb-20">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Coluna 1 — texto e CTAs */}
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 font-sans">
+                Cuidado inclusivo para quem mais precisa
+              </h1>
+              <p className="text-xl text-white/90 mb-10 max-w-xl">
+                Há 10 anos em Paraisópolis e, mais recentemente, no Jardim Tapicerica da Serra. Transformando transparência em confiança e confiança em participação.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/como-apoiar#doar"
+                  className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded transition hover:bg-ngo-yellow/90"
+                >
+                  Quero doar
+                </Link>
+                <Link
+                  href="/como-apoiar"
+                  className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded transition hover:bg-ngo-cream"
+                >
+                  Como apoiar
+                </Link>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Associação%20Pró-Paraíso"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-transparent text-white font-medium px-6 py-4 rounded border border-white/80 hover:bg-white/10 transition"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Fale conosco
+                </a>
+              </div>
+            </div>
+
+            {/* Coluna 2 — imagem institucional */}
+            <div className="relative rounded-2xl overflow-hidden aspect-video shadow-2xl ring-1 ring-white/10 bg-ngo-orange/10">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: 'url(/images/projetos/esporte-1.jpg)' }}
+                role="img"
+                aria-label="Crianças e jovens da Associação Pró-Paraíso em atividade"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
           </div>
+
           {/* Estatísticas no rodapé do hero */}
-          <div className="mt-16 pt-8 border-t border-white/30 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="mt-14 pt-8 border-t border-white/30 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <p className="text-white font-bebas text-4xl md:text-5xl leading-none">+800</p>
               <p className="text-white/80 text-sm mt-1">crianças e jovens em 14 modalidades</p>
@@ -97,16 +95,18 @@ export default function Home() {
                 Conheça nossa história
               </Link>
             </div>
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-ngo-orange/10">
-              <div
-                className="absolute inset-0 bg-cover bg-center rounded-2xl"
-                style={{
-                  backgroundImage: 'url(/images/projetos/esporte-1.jpg)',
-                }}
-                role="img"
-                aria-label="Crianças e jovens da Associação Pró-Paraíso em atividade"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-2xl" />
+            <div className="relative rounded-2xl overflow-hidden aspect-video shadow-2xl ring-1 ring-black/5 bg-black">
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Vídeo institucional da Associação Pró-Paraíso"
+              >
+                <source src="/videos/pro-paraiso-hero.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Impacto em números — indicadores verificáveis */}
-      <section className="section-padding bg-secondary-dark">
+      <section className="section-padding bg-ngo-text">
         <div className="container-custom">
           <div className="max-w-3xl mb-12 md:mb-16">
             <span className="section-label text-white/80 border-ngo-yellow mb-4 block">Impacto em números</span>
@@ -250,22 +250,22 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
-              { number: '1.000', label: 'atendimentos por mês', sub: '12.000 ao ano', accent: 'border-ngo-yellow' },
-              { number: '500', label: 'famílias atendidas por mês', sub: 'em campanhas solidárias', accent: 'border-ngo-green' },
-              { number: '14', label: 'modalidades ofertadas', sub: 'esporte, cultura e reforço', accent: 'border-ngo-orange' },
-              { number: '+800', label: 'alunos ativos', sub: 'caminhando para 1.000', accent: 'border-primary' },
-              { number: '8', label: 'campanhas solidárias por ano', sub: '~5.000 famílias beneficiadas', accent: 'border-ngo-yellow' },
-              { number: '2', label: 'unidades de atendimento', sub: 'Paraisópolis e Jardim Tapicerica', accent: 'border-ngo-green' },
+              { number: '1.000', label: 'atendimentos por mês', sub: '12.000 ao ano', accent: 'border-ngo-yellow', numberColor: 'text-ngo-yellow' },
+              { number: '500', label: 'famílias atendidas por mês', sub: 'em campanhas solidárias', accent: 'border-ngo-orange', numberColor: 'text-ngo-orange' },
+              { number: '14', label: 'modalidades ofertadas', sub: 'esporte, cultura e reforço', accent: 'border-primary', numberColor: 'text-primary' },
+              { number: '+800', label: 'alunos ativos', sub: 'caminhando para 1.000', accent: 'border-ngo-yellow', numberColor: 'text-ngo-yellow' },
+              { number: '8', label: 'campanhas solidárias por ano', sub: '~5.000 famílias beneficiadas', accent: 'border-ngo-orange', numberColor: 'text-ngo-orange' },
+              { number: '2', label: 'unidades de atendimento', sub: 'Paraisópolis e Jardim Tapicerica', accent: 'border-primary', numberColor: 'text-primary' },
             ].map((item) => (
               <div
                 key={item.label}
-                className={`bg-ngo-orange/40 backdrop-blur-sm rounded-2xl p-6 md:p-7 border-2 ${item.accent} border-opacity-50 hover:border-opacity-100 hover:bg-ngo-orange/60 transition-all`}
+                className={`bg-white/5 rounded-2xl p-6 md:p-7 border-2 ${item.accent} hover:bg-white/10 transition-all`}
               >
-                <p className="font-bebas text-5xl md:text-6xl leading-none tracking-wide text-white mb-3">
+                <p className={`font-bebas text-5xl md:text-6xl leading-none tracking-wide ${item.numberColor} mb-3`}>
                   {item.number}
                 </p>
-                <p className="text-white font-medium mb-1">{item.label}</p>
-                <p className="text-white/60 text-sm">{item.sub}</p>
+                <p className="text-white font-semibold mb-1">{item.label}</p>
+                <p className="text-white/70 text-sm">{item.sub}</p>
               </div>
             ))}
           </div>
