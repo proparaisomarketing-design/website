@@ -33,3 +33,23 @@ Antes de fazer upload, otimize as imagens para web:
 - Comprima as imagens para reduzir o tamanho do arquivo
 - Use ferramentas como TinyPNG, ImageOptim ou Squoosh
 - Mantenha o tamanho do arquivo abaixo de 500KB quando possível
+
+## Como adicionar fotos aos projetos
+
+1. Coloque o arquivo em `public/images/projetos/` com um nome claro:
+   - `esporte-1.jpg`, `esporte-2.jpg`, ...
+   - `aprender-1.jpg`, `aprender-2.jpg`, ...
+   - `caixinhas-1.jpg`, ...
+   - `solidariedade-1.jpg`, ...
+2. Abra `app/projetos/page.tsx`, ache o projeto desejado e adicione (ou amplie) o array `imagens`:
+
+   ```ts
+   imagens: [
+     '/images/projetos/esporte-1.jpg',
+     '/images/projetos/esporte-2.jpg',
+   ],
+   ```
+
+3. A galeria aparece automaticamente em 1, 2 ou 3+ colunas conforme a quantidade.
+
+Para trocar a foto que aparece no card de um projeto na home, edite `app/page.tsx` na seção "Projetos - 3 cards sobre fundo laranja" e ajuste o campo `image` para um caminho local em `/images/projetos/...`.

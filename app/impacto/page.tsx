@@ -96,7 +96,7 @@ export default function Impacto() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80)',
+            backgroundImage: 'url(/images/projetos/aprender-4.jpg)',
           }}
           aria-hidden
         />
@@ -230,7 +230,7 @@ export default function Impacto() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(/images/projetos/esporte-3.jpg)',
           }}
           aria-hidden
         />

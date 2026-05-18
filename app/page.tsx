@@ -101,7 +101,7 @@ export default function Home() {
               <div
                 className="absolute inset-0 bg-cover bg-center rounded-2xl"
                 style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&q=80)',
+                  backgroundImage: 'url(/images/projetos/esporte-1.jpg)',
                 }}
                 role="img"
                 aria-label="Crianças e jovens da Associação Pró-Paraíso em atividade"
@@ -197,19 +197,19 @@ export default function Home() {
               {
                 title: 'Esporte em Ação',
                 desc: 'Futebol, futsal e society. Um espaço seguro para socialização e rotina.',
-                image: 'https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=600&q=80',
+                image: '/images/projetos/esporte-2.jpg',
                 href: '/projetos#esporte',
               },
               {
                 title: 'Aprender para Crescer',
                 desc: 'Reforço escolar e acompanhamento para crianças de 6 a 12 anos.',
-                image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80',
+                image: '/images/projetos/aprender-2.jpg',
                 href: '/projetos#aprender',
               },
               {
                 title: 'Caixinhas e Solidariedade',
                 desc: 'Campanhas, cestas e eventos que levam dignidade e esperança.',
-                image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80',
+                image: '/images/projetos/caixinhas-3.jpg',
                 href: '/projetos',
               },
             ].map((card) => (
@@ -286,7 +286,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.6), rgba(239,125,0,0.55)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.6), rgba(239,125,0,0.55)), url(/images/projetos/esporte-4.jpg)',
           }}
         />
         <div className="container-custom relative z-10 py-16 md:py-20 text-center">

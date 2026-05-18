@@ -1,6 +1,23 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
-const projetos = [
+type Projeto = {
+  id: string
+  icone: string
+  iconBg: string
+  accentBg: string
+  titulo: string
+  descricao: string
+  modalidades: string
+  publico: string
+  frequencia: string
+  locais: string
+  objetivos: string[]
+  resultados: string
+  imagens?: string[]
+}
+
+const projetos: Projeto[] = [
   {
     id: 'esporte',
     icone: '⚽',
@@ -18,6 +35,14 @@ const projetos = [
       'Oferecer espaço seguro, educativo e saudável para convivência',
     ],
     resultados: 'Melhora no comportamento e na disciplina, ganhos na saúde física e no bem-estar mental, mais permanência e vínculo nas atividades.',
+    imagens: [
+      '/images/projetos/esporte-1.jpg',
+      '/images/projetos/esporte-2.jpg',
+      '/images/projetos/esporte-3.jpg',
+      '/images/projetos/esporte-4.jpg',
+      '/images/projetos/esporte-5.jpg',
+      '/images/projetos/esporte-6.jpg',
+    ],
   },
   {
     id: 'aprender',
@@ -36,6 +61,15 @@ const projetos = [
       'Investir em igualdade de oportunidades',
     ],
     resultados: 'As crianças passam a compreender melhor os conteúdos, acreditar no próprio potencial e ganhar rotina de estudo com acompanhamento.',
+    imagens: [
+      '/images/projetos/aprender-1.jpg',
+      '/images/projetos/aprender-2.jpg',
+      '/images/projetos/aprender-3.jpg',
+      '/images/projetos/aprender-4.jpg',
+      '/images/projetos/aprender-5.jpg',
+      '/images/projetos/aprender-6.jpg',
+      '/images/projetos/aprender-7.jpg',
+    ],
   },
   {
     id: 'caixinhas',
@@ -53,6 +87,12 @@ const projetos = [
       'Mobilizar a comunidade em torno de uma ação concreta',
     ],
     resultados: 'A criança se sente lembrada, valorizada e acolhida. Um modelo local de parceria que sustenta a iniciativa com continuidade.',
+    imagens: [
+      '/images/projetos/caixinhas-1.jpg',
+      '/images/projetos/caixinhas-2.jpg',
+      '/images/projetos/caixinhas-3.jpg',
+      '/images/projetos/caixinhas-4.jpg',
+    ],
   },
   {
     id: 'solidariedade',
@@ -71,6 +111,11 @@ const projetos = [
       'Transmitir: você não está sozinho',
     ],
     resultados: 'Rede de apoio em momentos críticos. Apoio de comerciantes e moradores da própria comunidade, com responsabilidade compartilhada.',
+    imagens: [
+      '/images/projetos/solidariedade-1.jpg',
+      '/images/projetos/solidariedade-2.jpg',
+      '/images/projetos/solidariedade-3.jpg',
+    ],
   },
 ]
 
@@ -82,7 +127,7 @@ export default function Projetos() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=1600&q=80)',
+            backgroundImage: 'url(/images/projetos/esporte-4.jpg)',
           }}
           aria-hidden
         />
@@ -167,6 +212,33 @@ export default function Projetos() {
                     <p className="text-white/90 leading-relaxed">{projeto.resultados}</p>
                   </div>
                 </div>
+
+                {projeto.imagens && projeto.imagens.length > 0 && (
+                  <div className="lg:col-span-12">
+                    <div className={`grid gap-4 ${
+                      projeto.imagens.length === 1
+                        ? 'grid-cols-1'
+                        : projeto.imagens.length === 2
+                          ? 'grid-cols-1 sm:grid-cols-2'
+                          : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                    }`}>
+                      {projeto.imagens.map((src, i) => (
+                        <div
+                          key={src}
+                          className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-ngo-orange/10 shadow-card"
+                        >
+                          <Image
+                            src={src}
+                            alt={`${projeto.titulo} — imagem ${i + 1}`}
+                            fill
+                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -211,7 +283,7 @@ export default function Projetos() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&q=80)',
+            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(/images/projetos/aprender-4.jpg)',
           }}
           aria-hidden
         />

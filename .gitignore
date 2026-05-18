@@ -57,3 +57,7 @@ desktop.ini
 
 # video original pesado (>50MB) — usar versão comprimida pro-paraiso-hero.mp4
 /public/videos/pro paraiso.mp4
+
+# dump bruto de fotos (Google Takeout) — selecionadas vão pra public/images/
+/public/fotos-*/
+/public/fotos-*.zip
