@@ -55,21 +55,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Estatísticas no rodapé do hero */}
-          <div className="mt-14 pt-8 border-t border-white/30 grid grid-cols-2 md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">+800</p>
-              <p className="text-white/80 text-sm mt-1">crianças e jovens em 14 modalidades</p>
-            </div>
-            <div>
-              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">10+</p>
-              <p className="text-white/80 text-sm mt-1">anos de atuação em Paraisópolis</p>
-            </div>
-            <div>
-              <p className="text-white font-bebas text-4xl md:text-5xl leading-none">500</p>
-              <p className="text-white/80 text-sm mt-1">famílias atendidas por mês em campanhas solidárias</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -185,9 +170,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projetos - 3 cards sobre fundo laranja */}
-      <section className="section-padding bg-ngo-orange">
-        <div className="container-custom">
+      {/* Projetos - 3 cards sobre fundo escuro */}
+      <section className="section-padding bg-ngo-text relative overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-ngo-orange/15 blur-3xl pointer-events-none" aria-hidden />
+        <div className="absolute bottom-0 -left-32 w-[400px] h-[400px] rounded-full bg-ngo-yellow/10 blur-3xl pointer-events-none" aria-hidden />
+
+        <div className="container-custom relative">
           <span className="section-label text-white/80 border-ngo-yellow mb-4 block">Projetos que realizamos</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-16 font-sans max-w-3xl">
             Estamos criando um lugar onde crianças e jovens podem crescer com oportunidades
@@ -199,35 +187,49 @@ export default function Home() {
                 desc: 'Futebol, futsal e society. Um espaço seguro para socialização e rotina.',
                 image: '/images/projetos/esporte-2.jpg',
                 href: '/projetos#esporte',
+                tagBg: 'bg-ngo-green',
+                tag: 'Esporte',
               },
               {
                 title: 'Aprender para Crescer',
                 desc: 'Reforço escolar e acompanhamento para crianças de 6 a 12 anos.',
                 image: '/images/projetos/aprender-2.jpg',
                 href: '/projetos#aprender',
+                tagBg: 'bg-ngo-yellow',
+                tag: 'Educação',
               },
               {
                 title: 'Caixinhas e Solidariedade',
                 desc: 'Campanhas, cestas e eventos que levam dignidade e esperança.',
                 image: '/images/projetos/caixinhas-3.jpg',
                 href: '/projetos',
+                tagBg: 'bg-ngo-orange',
+                tag: 'Solidariedade',
               },
             ].map((card) => (
               <Link
                 key={card.title}
                 href={card.href}
-                className="group block rounded-2xl overflow-hidden h-[420px] relative"
+                className="group block rounded-2xl overflow-hidden h-[420px] relative ring-1 ring-white/10 hover:ring-white/30 transition"
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition group-hover:scale-105"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url(${card.image})` }}
                 />
-                <div className="absolute inset-0 bg-secondary-dark/65" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ngo-text via-ngo-text/40 to-transparent" />
+                <span
+                  className={`absolute top-5 left-5 inline-flex items-center text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${card.tagBg} ${card.tagBg === 'bg-ngo-yellow' ? 'text-ngo-text' : 'text-white'} shadow-lg`}
+                >
+                  {card.tag}
+                </span>
                 <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
                   <h3 className="text-2xl font-bold mb-3 font-sans">{card.title}</h3>
                   <p className="text-white/90 text-sm leading-relaxed mb-6">{card.desc}</p>
-                  <span className="inline-flex items-center justify-center bg-white text-secondary-dark font-semibold px-6 py-3 rounded w-fit">
+                  <span className="inline-flex items-center gap-2 bg-white text-ngo-text font-semibold px-5 py-3 rounded w-fit group-hover:bg-ngo-yellow transition-colors">
                     Saiba mais
+                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </span>
                 </div>
               </Link>
@@ -286,7 +288,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.6), rgba(239,125,0,0.55)), url(/images/projetos/esporte-4.jpg)',
+            backgroundImage: 'linear-gradient(rgba(30,20,12,0.55), rgba(15,10,6,0.8)), url(/images/projetos/esporte-4.jpg)',
           }}
         />
         <div className="container-custom relative z-10 py-16 md:py-20 text-center">

@@ -1,11 +1,18 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import Galeria from '@/components/projetos/Galeria'
 
 type Projeto = {
   id: string
   icone: string
   iconBg: string
   accentBg: string
+  accentText: string
+  accentSoft: string
+  accentBorder: string
+  objetivosFg: string
+  objetivosBody: string
+  objetivosCheckCircle: string
+  objetivosCheckIcon: string
   titulo: string
   descricao: string
   modalidades: string
@@ -23,6 +30,13 @@ const projetos: Projeto[] = [
     icone: '⚽',
     iconBg: 'bg-ngo-green',
     accentBg: 'bg-white',
+    accentText: 'text-ngo-green',
+    accentSoft: 'bg-ngo-green/10',
+    accentBorder: 'border-ngo-green',
+    objetivosFg: 'text-white',
+    objetivosBody: 'text-white/95',
+    objetivosCheckCircle: 'bg-white',
+    objetivosCheckIcon: 'text-ngo-green',
     titulo: 'Esporte em Ação',
     descricao: 'Promove socialização e contribui para tirar crianças e jovens da rua, oferecendo um espaço seguro, educativo e saudável. O esporte organiza a energia, ensina convivência e dá direção. Para muitas crianças, o treino é o horário mais seguro do dia.',
     modalidades: 'Futebol de campo, futebol de salão e futebol society.',
@@ -48,7 +62,14 @@ const projetos: Projeto[] = [
     id: 'aprender',
     icone: '📚',
     iconBg: 'bg-ngo-yellow',
-    accentBg: 'bg-ngo-yellow-light',
+    accentBg: 'bg-ngo-cream',
+    accentText: 'text-secondary-dark',
+    accentSoft: 'bg-ngo-yellow/30',
+    accentBorder: 'border-ngo-yellow',
+    objetivosFg: 'text-ngo-text',
+    objetivosBody: 'text-ngo-text/85',
+    objetivosCheckCircle: 'bg-ngo-text',
+    objetivosCheckIcon: 'text-ngo-yellow',
     titulo: 'Aprender para Crescer',
     descricao: 'Atende crianças de 6 a 12 anos na Associação Pró-Paraíso, de segunda a sexta. Apoio educacional contínuo para fortalecer o aprendizado, criar rotina e ajudar cada criança a avançar no seu próprio ritmo.',
     modalidades: 'Reforço escolar.',
@@ -76,6 +97,13 @@ const projetos: Projeto[] = [
     icone: '🎁',
     iconBg: 'bg-ngo-orange',
     accentBg: 'bg-white',
+    accentText: 'text-ngo-orange',
+    accentSoft: 'bg-ngo-orange/10',
+    accentBorder: 'border-ngo-orange',
+    objetivosFg: 'text-white',
+    objetivosBody: 'text-white/95',
+    objetivosCheckCircle: 'bg-white',
+    objetivosCheckIcon: 'text-ngo-orange',
     titulo: 'Caixinhas de Natal',
     descricao: 'Iniciativa realizada há 5 anos consecutivos. A criança escreve uma cartinha pedindo um brinquedo. O padrinho entrega o brinquedo e também doa uma roupa e um sapato. Começou com 50 crianças e chegou a quase 400 no último ano.',
     modalidades: 'Campanha anual de final de ano.',
@@ -98,7 +126,14 @@ const projetos: Projeto[] = [
     id: 'solidariedade',
     icone: '🤝',
     iconBg: 'bg-primary',
-    accentBg: 'bg-ngo-yellow-light',
+    accentBg: 'bg-ngo-cream',
+    accentText: 'text-primary',
+    accentSoft: 'bg-primary/10',
+    accentBorder: 'border-primary',
+    objetivosFg: 'text-white',
+    objetivosBody: 'text-white/95',
+    objetivosCheckCircle: 'bg-white',
+    objetivosCheckIcon: 'text-primary',
     titulo: 'Solidariedade em Ação',
     descricao: 'Solidariedade, na prática, é quando alguém percebe que o outro está no limite e decide não virar o rosto. Este projeto nasceu para ser resposta rápida, digna e humana quando a necessidade aperta.',
     modalidades: 'Campanha do Agasalho, Natal Solidário, Luta contra a Fome, cestas básicas e doações.',
@@ -123,15 +158,15 @@ export default function Projetos() {
   return (
     <div className="bg-ngo-cream">
       {/* Hero */}
-      <section className="relative bg-ngo-orange text-white overflow-hidden">
+      <section className="relative bg-ngo-text text-white overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(/images/projetos/esporte-4.jpg)',
           }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/65 via-ngo-orange/40 to-secondary-dark/80" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-ngo-text/70 via-ngo-text/60 to-ngo-text/85" aria-hidden />
         <div className="container-custom relative z-10 pt-24 pb-20 md:pt-32 md:pb-24">
           <span className="section-label text-white/80 border-ngo-yellow mb-5 block">Projetos e ações</span>
           <h1 className="font-bebas text-5xl md:text-7xl leading-none tracking-wide mb-6 max-w-4xl">
@@ -158,88 +193,107 @@ export default function Projetos() {
 
       {/* Projetos */}
       <div>
-        {projetos.map((projeto) => (
+        {projetos.map((projeto, idx) => (
           <section
             key={projeto.id}
             id={projeto.id}
-            className={`${projeto.accentBg} section-padding scroll-mt-20`}
+            className={`${idx % 2 === 0 ? 'bg-white' : 'bg-ngo-cream'} section-padding scroll-mt-20 relative overflow-hidden`}
           >
-            <div className="container-custom">
-              <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-                {/* Cabeçalho do projeto */}
-                <div className="lg:col-span-5">
-                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl ${projeto.iconBg} flex items-center justify-center text-4xl md:text-5xl mb-6 shadow-sm`}>
+            {/* mancha de cor de fundo bem sutil */}
+            <div className={`absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full ${projeto.iconBg} opacity-[0.07] blur-3xl pointer-events-none`} aria-hidden />
+
+            <div className="container-custom relative">
+              {/* Header — número grande + icon + título + descrição alinhados */}
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 mb-12 md:mb-16" data-reveal>
+                <div className="lg:col-span-2 flex lg:flex-col items-center lg:items-start gap-4 lg:gap-6">
+                  <span className={`font-bebas text-6xl md:text-7xl lg:text-8xl ${projeto.accentText} leading-none tracking-wide`}>
+                    0{idx + 1}
+                  </span>
+                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl ${projeto.iconBg} flex items-center justify-center text-4xl md:text-5xl shadow-lg`}>
                     <span aria-hidden>{projeto.icone}</span>
                   </div>
-                  <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none mb-5 text-ngo-text">
-                    {projeto.titulo}
-                  </h2>
-                  <p className="text-ngo-text-muted text-lg leading-relaxed mb-6">
-                    {projeto.descricao}
-                  </p>
-                  <p className="text-sm text-ngo-text-muted">
-                    <span className="font-semibold text-ngo-text">Modalidades:</span> {projeto.modalidades}
-                  </p>
                 </div>
 
-                {/* Meta-infos e objetivos */}
-                <div className="lg:col-span-7 space-y-5">
-                  <div className="grid sm:grid-cols-3 gap-4">
-                    <InfoCard label="Público" value={projeto.publico} />
-                    <InfoCard label="Frequência" value={projeto.frequencia} />
-                    <InfoCard label="Locais" value={projeto.locais} />
-                  </div>
+                <div className="lg:col-span-10">
+                  <span className={`section-label mb-3 block ${projeto.accentText} !border-current`}>
+                    Projeto
+                  </span>
+                  <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl tracking-wide leading-none mb-5 text-ngo-text">
+                    {projeto.titulo}
+                  </h2>
+                  <p className="text-ngo-text-muted text-lg leading-relaxed mb-5 max-w-3xl">
+                    {projeto.descricao}
+                  </p>
+                  <p className={`inline-flex items-center gap-2 text-sm font-medium ${projeto.accentSoft} ${projeto.accentText} px-4 py-2 rounded-full`}>
+                    <span className="font-bold">Modalidades:</span>
+                    <span>{projeto.modalidades}</span>
+                  </p>
+                </div>
+              </div>
 
-                  <div className="bg-white rounded-2xl p-6 md:p-7 shadow-card border border-ngo-border/60">
-                    <h3 className="font-bebas text-2xl tracking-wide text-ngo-text mb-4">Objetivos</h3>
-                    <ul className="space-y-3">
+              {/* 3 InfoCards numa linha */}
+              <div className="grid sm:grid-cols-3 gap-4 mb-6" data-reveal data-reveal-delay="120">
+                <InfoCard icon="👥" label="Público" value={projeto.publico} accentSoft={projeto.accentSoft} accentText={projeto.accentText} />
+                <InfoCard icon="🗓️" label="Frequência" value={projeto.frequencia} accentSoft={projeto.accentSoft} accentText={projeto.accentText} />
+                <InfoCard icon="📍" label="Locais" value={projeto.locais} accentSoft={projeto.accentSoft} accentText={projeto.accentText} />
+              </div>
+
+              {/* Objetivos + Resultados lado a lado, mesma altura */}
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16" data-reveal data-reveal-delay="240">
+                <div className={`${projeto.iconBg} rounded-2xl p-6 md:p-7 flex flex-col relative overflow-hidden`}>
+                  <div className={`absolute -bottom-10 -right-10 w-32 h-32 rounded-full ${projeto.objetivosCheckCircle} opacity-10 pointer-events-none`} aria-hidden />
+                  <div className="relative flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className={`w-9 h-9 rounded-lg ${projeto.objetivosCheckCircle} ${projeto.objetivosCheckIcon} flex items-center justify-center text-lg shadow-sm`} aria-hidden>
+                        ★
+                      </span>
+                      <h3 className={`font-bebas text-2xl md:text-3xl tracking-wide ${projeto.objetivosFg} leading-none`}>Objetivos</h3>
+                    </div>
+                    <ul className="space-y-3 flex-1">
                       {projeto.objetivos.map((obj) => (
-                        <li key={obj} className="flex gap-3 text-ngo-text">
-                          <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-ngo-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="leading-relaxed">{obj}</span>
+                        <li key={obj} className={`flex gap-3 ${projeto.objetivosBody}`}>
+                          <span className={`w-6 h-6 rounded-full ${projeto.objetivosCheckCircle} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                            <svg className={`w-3.5 h-3.5 ${projeto.objetivosCheckIcon}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          <span className="leading-relaxed pt-0.5">{obj}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <div className="bg-secondary-dark text-white rounded-2xl p-6 md:p-7">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="inline-block w-2 h-2 rounded-full bg-ngo-yellow" aria-hidden />
-                      <h3 className="text-xs font-semibold uppercase tracking-widest text-ngo-yellow">Resultados percebidos</h3>
-                    </div>
-                    <p className="text-white/90 leading-relaxed">{projeto.resultados}</p>
-                  </div>
                 </div>
 
-                {projeto.imagens && projeto.imagens.length > 0 && (
-                  <div className="lg:col-span-12">
-                    <div className={`grid gap-4 ${
-                      projeto.imagens.length === 1
-                        ? 'grid-cols-1'
-                        : projeto.imagens.length === 2
-                          ? 'grid-cols-1 sm:grid-cols-2'
-                          : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-                    }`}>
-                      {projeto.imagens.map((src, i) => (
-                        <div
-                          key={src}
-                          className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden bg-ngo-orange/10 shadow-card"
-                        >
-                          <Image
-                            src={src}
-                            alt={`${projeto.titulo} — imagem ${i + 1}`}
-                            fill
-                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                            className="object-cover"
-                          />
-                        </div>
-                      ))}
+                <div className="relative bg-ngo-text text-white rounded-2xl p-6 md:p-7 overflow-hidden flex flex-col">
+                  <div className={`absolute -top-12 -right-12 w-40 h-40 rounded-full ${projeto.iconBg} opacity-25 blur-2xl pointer-events-none`} aria-hidden />
+                  <div className="relative flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className={`w-9 h-9 rounded-lg ${projeto.iconBg} flex items-center justify-center text-white text-lg shadow-lg`} aria-hidden>
+                        ✦
+                      </span>
+                      <h3 className={`font-bebas text-xl md:text-2xl tracking-widest uppercase ${projeto.accentText} leading-none`}>
+                        Resultados percebidos
+                      </h3>
                     </div>
+                    <p className="text-white/90 leading-relaxed flex-1">{projeto.resultados}</p>
                   </div>
-                )}
+                </div>
               </div>
+
+              {/* Galeria densa com lightbox */}
+              {projeto.imagens && projeto.imagens.length > 0 && (
+                <div data-reveal data-reveal-delay="360">
+                  <div className="flex items-center justify-between mb-5">
+                    <h3 className="font-bebas text-2xl md:text-3xl tracking-wide text-ngo-text leading-none">
+                      Galeria
+                    </h3>
+                    <span className="text-xs uppercase tracking-widest text-ngo-text-muted">
+                      {projeto.imagens.length} {projeto.imagens.length === 1 ? 'foto' : 'fotos'} · clique para ampliar
+                    </span>
+                  </div>
+                  <Galeria imagens={projeto.imagens} titulo={projeto.titulo} accentBg={projeto.iconBg} />
+                </div>
+              )}
             </div>
           </section>
         ))}
@@ -283,7 +337,7 @@ export default function Projetos() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(/images/projetos/aprender-4.jpg)',
+            backgroundImage: 'linear-gradient(rgba(30,20,12,0.55), rgba(15,10,6,0.8)), url(/images/projetos/aprender-4.jpg)',
           }}
           aria-hidden
         />
@@ -316,10 +370,25 @@ export default function Projetos() {
   )
 }
 
-function InfoCard({ label, value }: { label: string; value: string }) {
+function InfoCard({
+  icon,
+  label,
+  value,
+  accentSoft,
+  accentText,
+}: {
+  icon: string
+  label: string
+  value: string
+  accentSoft: string
+  accentText: string
+}) {
   return (
-    <div className="bg-white rounded-xl p-5 border border-ngo-border/60 shadow-card">
-      <p className="text-xs font-semibold uppercase tracking-widest text-ngo-text-muted mb-2">{label}</p>
+    <div className={`${accentSoft} rounded-2xl p-5 hover:-translate-y-0.5 transition-transform duration-200`}>
+      <div className="w-10 h-10 rounded-xl bg-white/70 flex items-center justify-center mb-3 text-xl shadow-sm">
+        <span aria-hidden>{icon}</span>
+      </div>
+      <p className={`text-xs font-bold uppercase tracking-widest ${accentText} mb-2`}>{label}</p>
       <p className="text-ngo-text text-sm leading-relaxed">{value}</p>
     </div>
   )

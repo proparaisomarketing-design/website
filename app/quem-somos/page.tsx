@@ -4,33 +4,68 @@ const timeline = [
   {
     year: '2015',
     title: 'O começo com 50 alunos',
-    body: 'No início, eram 50 alunos e o projeto era só futebol. Não tinha uniforme nem material esportivo — muitas crianças treinavam com o que tinham. Mesmo assim, o projeto acontecia: com presença, disciplina e compromisso de fazer direito.',
-    footnote: '24 de setembro de 2015 — registro oficial, com documentação e organização formal.',
+    body: 'No início, eram 50 alunos e o projeto era só futebol. Não tinha uniforme nem material esportivo, muitas crianças treinavam com o que tinham. Mesmo assim, o projeto acontecia: com presença, disciplina e compromisso de fazer direito.',
+    footnote: '24 de setembro de 2015. Registro oficial, com documentação e organização formal.',
+    cardBg: 'bg-ngo-yellow',
+    cardText: 'text-ngo-text',
+    cardBodyText: 'text-ngo-text/85',
+    cardYearText: 'text-ngo-text',
+    cardBorder: '',
+    cardFootnote: 'text-ngo-text/60 border-ngo-text/15',
     dotColor: 'bg-ngo-yellow',
+    glowColor: 'shadow-[0_0_24px_rgba(244,169,0,0.55)]',
   },
   {
     year: '2016–2019',
     title: 'A comunidade acredita e o projeto cresce',
-    body: 'De 50 para 100, depois 150, e um salto importante: 300 alunos. Três modalidades — futebol, futsal e karatê. Já com uma característica clara: não era só sobre esporte, era sobre oferecer caminho, rotina e proteção.',
+    body: 'De 50 para 100, depois 150, e um salto importante: 300 alunos. Três modalidades: futebol, futsal e karatê. Já com uma característica clara, não era só sobre esporte, era sobre oferecer caminho, rotina e proteção.',
+    cardBg: 'bg-ngo-green',
+    cardText: 'text-white',
+    cardBodyText: 'text-white/90',
+    cardYearText: 'text-white',
+    cardBorder: '',
+    cardFootnote: 'text-white/60 border-white/15',
     dotColor: 'bg-ngo-green',
+    glowColor: 'shadow-[0_0_24px_rgba(96,133,45,0.55)]',
   },
   {
     year: '2020–2023',
     title: 'Mais modalidades, mais estrutura',
     body: 'Comerciantes e apoiadores se aproximaram. Chegaram uniformes, calções, meiões, coletes e material esportivo. A criança passou a encontrar aqui o que precisava para participar com dignidade. Até o lanche virou realidade via patrocínio.',
+    cardBg: 'bg-white',
+    cardText: 'text-ngo-text',
+    cardBodyText: 'text-ngo-text-muted',
+    cardYearText: 'text-ngo-orange',
+    cardBorder: 'border-2 border-ngo-orange',
+    cardFootnote: 'text-ngo-text-muted/80 border-ngo-border',
     dotColor: 'bg-ngo-orange',
+    glowColor: 'shadow-[0_0_24px_rgba(239,125,0,0.55)]',
   },
   {
     year: '2024+',
     title: '14 modalidades, base de 800 alunos',
     body: 'Futebol de campo, society, futsal, reforço escolar (manhã e tarde), muay thai, capoeira, karatê, judô, pilates, zumba, aula de sertanejo e mais. Caminhando para 1.000 alunos. Expansão para o Jardim Tapicerica da Serra (Jardim Banca Flor), com cerca de 300 alunos no futebol de campo.',
+    cardBg: 'bg-primary',
+    cardText: 'text-white',
+    cardBodyText: 'text-white/90',
+    cardYearText: 'text-white',
+    cardBorder: '',
+    cardFootnote: 'text-white/60 border-white/15',
     dotColor: 'bg-primary',
+    glowColor: 'shadow-[0_0_24px_rgba(59,149,210,0.55)]',
   },
   {
     year: 'Há 5 anos',
     title: 'Caixinhas de Natal',
     body: 'A criança escreve uma cartinha pedindo um brinquedo; o padrinho entrega brinquedo, roupa e sapato. De 50 crianças para quase 400 no último ano, com ajuda de comerciantes e padrinhos da comunidade.',
-    dotColor: 'bg-ngo-yellow',
+    cardBg: 'bg-ngo-orange',
+    cardText: 'text-white',
+    cardBodyText: 'text-white/90',
+    cardYearText: 'text-white',
+    cardBorder: '',
+    cardFootnote: 'text-white/60 border-white/15',
+    dotColor: 'bg-ngo-orange',
+    glowColor: 'shadow-[0_0_24px_rgba(239,125,0,0.55)]',
   },
 ]
 
@@ -145,45 +180,73 @@ export default function QuemSomos() {
       </section>
 
       {/* Linha do tempo */}
-      <section className="section-padding bg-ngo-cream">
-        <div className="container-custom">
-          <div className="max-w-3xl mb-12 md:mb-16">
+      <section className="section-padding bg-ngo-cream relative overflow-hidden">
+        {/* manchas decorativas sutis de cor */}
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-ngo-yellow/25 blur-3xl pointer-events-none" aria-hidden />
+        <div className="absolute bottom-0 -right-40 w-[600px] h-[600px] rounded-full bg-ngo-orange/15 blur-3xl pointer-events-none" aria-hidden />
+
+        <div className="container-custom relative">
+          <div className="max-w-3xl mb-16 md:mb-24" data-reveal>
             <span className="section-label mb-4 block">Linha do tempo</span>
-            <h2 className="font-bebas text-4xl md:text-5xl tracking-wide leading-none text-ngo-text">
-              Do primeiro treino ao que somos hoje
+            <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl tracking-wide leading-none text-ngo-text">
+              Do primeiro treino ao{' '}
+              <span className="text-ngo-orange">que somos hoje</span>
             </h2>
           </div>
+
           <div className="relative">
-            {/* Linha vertical (visível em md+) */}
-            <div className="hidden md:block absolute left-6 top-2 bottom-2 w-px bg-ngo-border" aria-hidden />
-            <ol className="space-y-6 md:space-y-8">
-              {timeline.map((item) => (
-                <li key={item.year} className="relative md:pl-20">
-                  {/* Dot */}
-                  <span
-                    className={`hidden md:flex absolute left-0 top-2 w-12 h-12 rounded-full ${item.dotColor} items-center justify-center shadow-sm`}
-                    aria-hidden
+            {/* Linha vertical com gradiente */}
+            <div
+              className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 md:-translate-x-1/2 bg-gradient-to-b from-ngo-yellow via-ngo-orange to-primary"
+              aria-hidden
+            />
+
+            <ol className="space-y-12 md:space-y-20">
+              {timeline.map((item, i) => {
+                const isLeft = i % 2 === 0
+                return (
+                  <li
+                    key={`${item.year}-${i}`}
+                    className="relative"
+                    data-reveal
+                    data-reveal-delay={String(i * 120)}
                   >
-                    <span className="w-3 h-3 rounded-full bg-white" />
-                  </span>
-                  <article className="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-ngo-border/60">
-                    <div className="flex flex-wrap items-baseline gap-4 mb-3">
-                      <span className="font-bebas text-3xl md:text-4xl tracking-wide text-ngo-text leading-none">
-                        {item.year}
-                      </span>
-                      <h3 className="text-lg md:text-xl font-bold text-ngo-text font-sans">
-                        {item.title}
-                      </h3>
+                    {/* Dot na linha */}
+                    <span
+                      className={`absolute left-6 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full ${item.dotColor} ring-4 ring-ngo-cream z-10 ${item.glowColor}`}
+                      aria-hidden
+                    >
+                      <span className={`absolute inset-0 rounded-full ${item.dotColor} animate-ping opacity-50`} />
+                    </span>
+
+                    {/* Card — zig-zag no desktop, stack no mobile */}
+                    <div
+                      className={`pl-16 md:pl-0 md:w-1/2 ${
+                        isLeft ? 'md:pr-12 lg:pr-16' : 'md:ml-auto md:pl-12 lg:pl-16'
+                      }`}
+                    >
+                      <article
+                        className={`${item.cardBg} ${item.cardBorder} rounded-2xl p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300`}
+                      >
+                        <p
+                          className={`font-bebas text-5xl md:text-6xl lg:text-7xl tracking-wide leading-none mb-4 ${item.cardYearText}`}
+                        >
+                          {item.year}
+                        </p>
+                        <h3 className={`text-xl md:text-2xl font-bold ${item.cardText} font-sans mb-4 leading-tight`}>
+                          {item.title}
+                        </h3>
+                        <p className={`${item.cardBodyText} leading-relaxed`}>{item.body}</p>
+                        {item.footnote && (
+                          <p className={`text-xs mt-4 pt-4 border-t ${item.cardFootnote}`}>
+                            {item.footnote}
+                          </p>
+                        )}
+                      </article>
                     </div>
-                    <p className="text-ngo-text-muted leading-relaxed">{item.body}</p>
-                    {item.footnote && (
-                      <p className="text-xs text-ngo-text-muted/80 mt-3 pt-3 border-t border-ngo-border">
-                        {item.footnote}
-                      </p>
-                    )}
-                  </article>
-                </li>
-              ))}
+                  </li>
+                )
+              })}
             </ol>
           </div>
         </div>
@@ -242,7 +305,7 @@ export default function QuemSomos() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(/images/projetos/esporte-1.jpg)',
+            backgroundImage: 'linear-gradient(rgba(30,20,12,0.55), rgba(15,10,6,0.8)), url(/images/projetos/esporte-1.jpg)',
           }}
           aria-hidden
         />

@@ -230,7 +230,7 @@ export default function Impacto() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'linear-gradient(rgba(196,100,0,0.65), rgba(239,125,0,0.6)), url(/images/projetos/esporte-3.jpg)',
+            backgroundImage: 'linear-gradient(rgba(30,20,12,0.55), rgba(15,10,6,0.8)), url(/images/projetos/esporte-3.jpg)',
           }}
           aria-hidden
         />
