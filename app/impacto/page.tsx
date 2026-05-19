@@ -244,7 +244,7 @@ export default function Impacto() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/como-apoiar#doar"
-              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded-full hover:bg-ngo-yellow/90 transition"
             >
               Quero doar
             </Link>
@@ -252,7 +252,7 @@ export default function Impacto() {
               href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20como%20posso%20apoiar%20a%20Associação%20Pró-Paraíso"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-cream transition"
+              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded-full hover:bg-ngo-cream transition"
             >
               Falar no WhatsApp
             </a>

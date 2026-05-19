@@ -288,7 +288,7 @@ export default function PreCadastroForm() {
                 <button
                   type="button"
                   onClick={anterior}
-                  className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-6 py-3 rounded border border-ngo-border hover:bg-ngo-cream transition"
+                  className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-6 py-3 rounded-full border border-ngo-border hover:bg-ngo-cream transition"
                 >
                   ← Voltar
                 </button>
@@ -300,7 +300,7 @@ export default function PreCadastroForm() {
                 <button
                   type="button"
                   onClick={proxima}
-                  className="inline-flex items-center justify-center bg-ngo-orange text-white font-semibold px-8 py-3 rounded hover:bg-secondary-dark transition"
+                  className="inline-flex items-center justify-center bg-ngo-orange text-white font-semibold px-8 py-3 rounded-full hover:bg-secondary-dark transition"
                 >
                   Continuar →
                 </button>
@@ -309,7 +309,7 @@ export default function PreCadastroForm() {
                   type="button"
                   onClick={enviar}
                   disabled={enviando}
-                  className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-bold px-8 py-3 rounded hover:bg-ngo-yellow/90 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-bold px-8 py-3 rounded-full hover:bg-ngo-yellow/90 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {enviando ? 'Enviando…' : 'Enviar pré-cadastro'}
                 </button>

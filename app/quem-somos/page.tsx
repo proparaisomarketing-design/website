@@ -321,13 +321,13 @@ export default function QuemSomos() {
               href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20conhecer%20melhor%20a%20Associação%20Pró-Paraíso"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded-full hover:bg-ngo-yellow/90 transition"
             >
               Fale conosco
             </a>
             <Link
               href="/como-apoiar#doar"
-              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-cream transition"
+              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded-full hover:bg-ngo-cream transition"
             >
               Quero doar
             </Link>

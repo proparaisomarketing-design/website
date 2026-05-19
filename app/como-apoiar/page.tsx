@@ -371,19 +371,19 @@ export default function ComoApoiar() {
               href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20como%20posso%20apoiar%20a%20Associação%20Pró-Paraíso"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded-full hover:bg-ngo-yellow/90 transition"
             >
               Falar no WhatsApp
             </a>
             <Link
               href="/projetos"
-              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-cream transition"
+              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded-full hover:bg-ngo-cream transition"
             >
               Conhecer projetos
             </Link>
             <Link
               href="/impacto"
-              className="inline-flex items-center justify-center bg-transparent text-white font-medium px-8 py-4 rounded border border-white/40 hover:bg-white/10 transition"
+              className="inline-flex items-center justify-center bg-transparent text-white font-medium px-8 py-4 rounded-full border border-white/40 hover:bg-white/10 transition"
             >
               Ver impacto real
             </Link>

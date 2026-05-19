@@ -10,14 +10,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Logo e sobre */}
           <div className="lg:col-span-1">
-            <Image
-              src="/logo/logo.png"
-              alt="Associação Pró-Paraíso"
-              width={1356}
-              height={444}
-              className="h-12 w-auto mb-4 brightness-0 invert"
-            />
-            <p className="text-white/75 text-sm leading-relaxed">
+            <div className="inline-flex items-center bg-white rounded-2xl px-5 py-3 mb-5 shadow-lg">
+              <Image
+                src="/logo/logo.png"
+                alt="Associação Pró-Paraíso"
+                width={1356}
+                height={444}
+                className="h-10 w-auto"
+              />
+            </div>
+            <p className="text-white/85 text-sm leading-relaxed">
               Amor que transforma, comunidade que cresce. Paraisópolis, São Paulo.
             </p>
           </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import WaveDivider from '@/components/WaveDivider'
 
 export default function Home() {
   return (
@@ -6,6 +7,12 @@ export default function Home() {
       {/* Hero Section - texto à esquerda, vídeo institucional à direita */}
       <section className="relative bg-secondary-dark text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary-dark via-ngo-orange/25 to-secondary-dark" aria-hidden />
+        {/* sol amarelo decorativo (eco da logo) */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-ngo-yellow/30 blur-3xl pointer-events-none" aria-hidden />
+        {/* onda verde decorativa (eco da logo) */}
+        <div className="absolute -bottom-40 -left-20 w-96 h-96 rounded-full bg-ngo-green/25 blur-3xl pointer-events-none" aria-hidden />
+        {/* bolha azul */}
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-primary/15 blur-3xl pointer-events-none" aria-hidden />
         <div className="container-custom relative z-10 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Coluna 1 — texto e CTAs */}
@@ -19,13 +26,13 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/como-apoiar#doar"
-                  className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded transition hover:bg-ngo-yellow/90"
+                  className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-semibold px-8 py-4 rounded-full transition hover:bg-ngo-yellow/90"
                 >
                   Quero doar
                 </Link>
                 <Link
                   href="/como-apoiar"
-                  className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded transition hover:bg-ngo-cream"
+                  className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded-full transition hover:bg-ngo-cream"
                 >
                   Como apoiar
                 </Link>
@@ -33,7 +40,7 @@ export default function Home() {
                   href="https://api.whatsapp.com/send/?phone=5511987103256&text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Associação%20Pró-Paraíso"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-transparent text-white font-medium px-6 py-4 rounded border border-white/80 hover:bg-white/10 transition"
+                  className="inline-flex items-center gap-2 bg-transparent text-white font-medium px-6 py-4 rounded-full border border-white/80 hover:bg-white/10 transition"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path d="M8 5v14l11-7z" />
@@ -57,6 +64,7 @@ export default function Home() {
 
         </div>
       </section>
+      <WaveDivider fromColor="bg-secondary-dark" fillColor="fill-white" />
 
       {/* Sobre nós - duas colunas */}
       <section className="section-padding bg-white">
@@ -75,7 +83,7 @@ export default function Home() {
               </p>
               <Link
                 href="/quem-somos"
-                className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
+                className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-medium px-8 py-4 rounded-full hover:bg-ngo-yellow/90 transition"
               >
                 Conheça nossa história
               </Link>
@@ -96,6 +104,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <WaveDivider fromColor="bg-white" fillColor="fill-ngo-yellow-light" />
 
       {/* O que fazemos - grid 2x2 de cards em destaque */}
       <section className="section-padding bg-ngo-yellow-light">
@@ -169,6 +178,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <WaveDivider fromColor="bg-ngo-yellow-light" fillColor="fill-ngo-text" />
 
       {/* Projetos - 3 cards sobre fundo escuro */}
       <section className="section-padding bg-ngo-text relative overflow-hidden">
@@ -225,7 +235,7 @@ export default function Home() {
                 <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
                   <h3 className="text-2xl font-bold mb-3 font-sans">{card.title}</h3>
                   <p className="text-white/90 text-sm leading-relaxed mb-6">{card.desc}</p>
-                  <span className="inline-flex items-center gap-2 bg-white text-ngo-text font-semibold px-5 py-3 rounded w-fit group-hover:bg-ngo-yellow transition-colors">
+                  <span className="inline-flex items-center gap-2 bg-white text-ngo-text font-semibold px-5 py-3 rounded-full w-fit group-hover:bg-ngo-yellow transition-colors">
                     Saiba mais
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -237,44 +247,45 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <WaveDivider fromColor="bg-ngo-text" fillColor="fill-ngo-cream" />
 
       {/* Impacto em números — indicadores verificáveis */}
-      <section className="section-padding bg-ngo-text">
+      <section className="section-padding bg-ngo-cream">
         <div className="container-custom">
           <div className="max-w-3xl mb-12 md:mb-16">
-            <span className="section-label text-white/80 border-ngo-yellow mb-4 block">Impacto em números</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 font-sans">
+            <span className="section-label mb-4 block">Impacto em números</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ngo-text leading-tight mb-6 font-sans">
               Transparência traduzida em prática
             </h2>
-            <p className="text-white/70 leading-relaxed">
-              Os números abaixo são reais e verificáveis — atualizados conforme nossa rotina de atendimentos, campanhas e atividades. Comprometemo-nos com total transparência.
+            <p className="text-ngo-text-muted leading-relaxed">
+              Os números abaixo são reais e verificáveis, atualizados conforme nossa rotina de atendimentos, campanhas e atividades. Comprometemo-nos com total transparência.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
-              { number: '1.000', label: 'atendimentos por mês', sub: '12.000 ao ano', accent: 'border-ngo-yellow', numberColor: 'text-ngo-yellow' },
-              { number: '500', label: 'famílias atendidas por mês', sub: 'em campanhas solidárias', accent: 'border-ngo-orange', numberColor: 'text-ngo-orange' },
-              { number: '14', label: 'modalidades ofertadas', sub: 'esporte, cultura e reforço', accent: 'border-primary', numberColor: 'text-primary' },
-              { number: '+800', label: 'alunos ativos', sub: 'caminhando para 1.000', accent: 'border-ngo-yellow', numberColor: 'text-ngo-yellow' },
-              { number: '8', label: 'campanhas solidárias por ano', sub: '~5.000 famílias beneficiadas', accent: 'border-ngo-orange', numberColor: 'text-ngo-orange' },
-              { number: '2', label: 'unidades de atendimento', sub: 'Paraisópolis e Jardim Tapicerica', accent: 'border-primary', numberColor: 'text-primary' },
+              { number: '1.000', label: 'atendimentos por mês', sub: '12.000 ao ano', bg: 'bg-ngo-orange', fg: 'text-white', subFg: 'text-white/85' },
+              { number: '500', label: 'famílias atendidas por mês', sub: 'em campanhas solidárias', bg: 'bg-ngo-green', fg: 'text-white', subFg: 'text-white/85' },
+              { number: '14', label: 'modalidades ofertadas', sub: 'esporte, cultura e reforço', bg: 'bg-ngo-yellow', fg: 'text-ngo-text', subFg: 'text-ngo-text/70' },
+              { number: '+800', label: 'alunos ativos', sub: 'caminhando para 1.000', bg: 'bg-primary', fg: 'text-white', subFg: 'text-white/85' },
+              { number: '8', label: 'campanhas solidárias por ano', sub: '~5.000 famílias beneficiadas', bg: 'bg-ngo-orange', fg: 'text-white', subFg: 'text-white/85' },
+              { number: '2', label: 'unidades de atendimento', sub: 'Paraisópolis e Jardim Tapicerica', bg: 'bg-ngo-green', fg: 'text-white', subFg: 'text-white/85' },
             ].map((item) => (
               <div
                 key={item.label}
-                className={`bg-white/5 rounded-2xl p-6 md:p-7 border-2 ${item.accent} hover:bg-white/10 transition-all`}
+                className={`${item.bg} rounded-2xl p-6 md:p-7 hover:-translate-y-1 transition-transform duration-300`}
               >
-                <p className={`font-bebas text-5xl md:text-6xl leading-none tracking-wide ${item.numberColor} mb-3`}>
+                <p className={`font-bebas text-5xl md:text-6xl leading-none tracking-wide ${item.fg} mb-3`}>
                   {item.number}
                 </p>
-                <p className="text-white font-semibold mb-1">{item.label}</p>
-                <p className="text-white/70 text-sm">{item.sub}</p>
+                <p className={`${item.fg} font-semibold mb-1`}>{item.label}</p>
+                <p className={`${item.subFg} text-sm`}>{item.sub}</p>
               </div>
             ))}
           </div>
           <div className="mt-12">
             <Link
               href="/impacto"
-              className="inline-flex items-center gap-2 text-ngo-yellow font-medium group"
+              className="inline-flex items-center gap-2 text-ngo-orange font-semibold group"
             >
               Ver relatório de impacto completo
               <span className="group-hover:translate-x-1 transition">→</span>
@@ -298,13 +309,13 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/como-apoiar"
-              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-yellow/90 transition"
+              className="inline-flex items-center justify-center bg-ngo-yellow text-ngo-text font-medium px-8 py-4 rounded-full hover:bg-ngo-yellow/90 transition"
             >
               Quero ser voluntário
             </Link>
             <Link
               href="/como-apoiar#doar"
-              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded hover:bg-ngo-cream transition"
+              className="inline-flex items-center justify-center bg-white text-ngo-text font-medium px-8 py-4 rounded-full hover:bg-ngo-cream transition"
             >
               Quero doar
             </Link>
@@ -354,7 +365,7 @@ export default function Home() {
               },
             ].map((item) => (
               <div key={item.title} className="bg-ngo-yellow-light rounded-2xl p-6">
-                <span className="inline-block text-ngo-text-muted text-xs font-semibold uppercase tracking-wider mb-3 px-2 py-1 rounded bg-white/60">
+                <span className="inline-block text-ngo-text-muted text-xs font-semibold uppercase tracking-wider mb-3 px-2 py-1 rounded-full bg-white/60">
                   {item.when}
                 </span>
                 <h3 className="text-lg font-bold text-ngo-text mb-2 font-sans">{item.title}</h3>
